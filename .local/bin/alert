@@ -1,0 +1,3 @@
+#!/bin/sh
+
+if [ "$1" != "Spotify" ]; then mpv "$HOME/.local/share/sounds/notification-gta.ogg"; fi
