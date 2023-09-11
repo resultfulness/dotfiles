@@ -44,7 +44,7 @@ bspc rule -a 'Friends List' state=floating focus=off
 bspc rule -a 'Steam - News' state=floating focus=off
 bspc rule -a discord desktop='^10'
 bspc rule -a thunderbird desktop='^7'
-bspc rule -a Signal desktop='^8' state=floating
+bspc rule -a Signal desktop='^8'
 bspc rule -a Gimp-2.10 desktop='^5' follow=off focus=off
 bspc rule -a Inkscape desktop='^5'
 bspc rule -a obsidian desktop='^4'
@@ -75,7 +75,6 @@ picom -b &
 xsetroot -cursor_name left_ptr &
 flameshot &
 syncthing -no-browser &
-setxkbmap -layout "pl" -option caps:escape -option shift:both_capslock &
 emote &
 thunderbird &
 signal-desktop &

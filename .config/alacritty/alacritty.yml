@@ -2,7 +2,7 @@ font:
   normal:
     family: ComicShannsMono Nerd Font
 
-  size: 20.0
+  size: 16.0
 
 key_bindings:
   - { key: Period,   mods: Control,        chars: "\x1b[46;5u" }

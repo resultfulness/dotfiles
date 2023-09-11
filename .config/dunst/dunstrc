@@ -319,6 +319,10 @@
     frame_color = "#1ED760"
     new_icon = /usr/share/icons/Papirus/32x32/apps/Spotify.svg
 
+[Discord]
+    desktop_entry = "discord"
+    timeout = 0
+
 [update]
     summary = "Updates Available"
     body = 
