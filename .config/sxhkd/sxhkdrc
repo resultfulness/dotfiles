@@ -115,12 +115,13 @@ super + Return
 super + shift + Return
     alacritty --class floater
 
-# program launcher
+# rofi
 super + @space
     ~/.config/rofi/launchers/type-1/launcher.sh
 
-super + shift + e
-    emote
+# powermenu
+super + control + q
+    ~/.config/rofi/powermenu/type-3/powermenu.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -138,16 +139,10 @@ super + x
 # Special Hotkeys
 #
 
-# powermenu
-super + control + q
-    ~/.config/rofi/powermenu/type-3/powermenu.sh
-
 # Screenshot
-super + Print
-    flameshot gui --clipboard
-
-Print
-    flameshot gui
+# super posts to clipboard
+{_,super + } Print
+    flameshot gui {_,--clipboard}
 
 # killer
 alt + F4
@@ -196,18 +191,42 @@ alt + F1
 alt + F2
     nm-connection-editor
 
+super + shift + e
+    emote
+
 # color picker
-
-super + c
-    gpick -o -s | xclip -r -sel c
-
-super + shift + c
-    gpick
+# shift opens gui, no shift just copies to clipboard
+super + {_,shift + } c
+    gpick {-o -s | xclip -r -sel c,_}
 
 # calculator
 super + shift + semicolon
+    alacritty --class floater -e node
+
+#
+# XF86 keybindings
+# 
+
+{XF86AudioLowerVolume,XF86AudioRaiseVolume}
+    pactl set-sink-volume 1 {-5%,+5%}
+
+XF86AudioMute
+    pactl set-sink-mute 1 toggle
+
+{XF86AudioPrev,XF86AudioNext,XF86AudioPlay,XF86AudioStop}
+    playerctl {previous,next,play-pause,stop}
+
+super + {XF86AudioPrev,XF86AudioNext,XF86AudioLowerVolume,XF86AudioRaiseVolume}
+    playerctl position {10-,10+,2-,0.5+}
+
+XF86Explorer
+    thunar
+
+XF86Search
+    ~/.config/rofi/launchers/type-1/launcher.sh
+
+XF86Calculator
     alacritty --class floater -e bc --mathlib
 
-
-super + shift + n
-    ~/.local/bin/notification-test
+XF86Tools
+    :
