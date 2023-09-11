@@ -20,7 +20,6 @@ alias ls='exa'
 alias ll='exa -la'
 alias l='exa -l'
 alias grep='grep --color=auto'
-export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 6)\]\h\[$(tput setaf 4)\]:\[$(tput setaf 5)\]\w\[$(tput setaf 1)\] ]\[$(tput setaf 7)\]\$ '
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
@@ -33,7 +32,6 @@ HISTSIZE= HISTFILESIZE=
 export EDITOR=nvim
 alias vim='nvim'
 export VISUAL=vim
-export BROWSER=firefox
 export TERMINAL=alacritty
 export ANDROID_HOME=$HOME/Android/Sdk
 export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
@@ -63,7 +61,9 @@ mkcd() {
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/doc/pkgfile/command-not-found.bash
+source ~/gitstatus/gitstatus.prompt.sh
 
+export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 6)\]\h\[$(tput setaf 4)\]:\[$(tput setaf 5)\]\w ${GITSTATUS_PROMPT}\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\$ '
 
 # pnpm
 export PNPM_HOME="/home/alicja/.local/share/pnpm"
@@ -72,3 +72,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
