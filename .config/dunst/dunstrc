@@ -296,7 +296,7 @@
 [urgency_normal]
     background = "#282c34"
     foreground = "#abb2bf"
-    timeout = 0
+    timeout = 20
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -321,7 +321,7 @@
 
 [Discord]
     desktop_entry = "discord"
-    timeout = 0
+    timeout = 30
 
 [update]
     summary = "Updates Available"
