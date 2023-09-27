@@ -16,9 +16,6 @@ export PATH
 alias ls='ls --color=auto'
 alias ll='ls -lahv --ignore=..'   # show long listing of all except ".."
 alias l='ls -lahv --ignore=.?*'   # show long listing but no hidden dotfiles except "."
-alias ls='exa'
-alias ll='exa -la'
-alias l='exa -l'
 alias grep='grep --color=auto'
 
 ## Use the up and down arrow keys for finding a command in history
@@ -30,6 +27,7 @@ shopt -s autocd
 HISTSIZE= HISTFILESIZE=
 
 export EDITOR=nvim
+alias nv='nvim'
 alias vim='nvim'
 export VISUAL=vim
 export TERMINAL=alacritty
@@ -43,14 +41,12 @@ bind '"\C-f": "sessionizer\n"'
 alias s='startx'
 alias g='git'
 alias c='codium'
-alias v='vim'
+alias v='nvim .'
 alias rf='rm -rf'
 alias cp='cp -rv'
 alias rem='yay -Rcnsu'
 alias ka='killall'
 alias :q='exit'
-
-alias cat='bat'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/personal/.dotfiles --work-tree=$HOME'
 
@@ -61,7 +57,7 @@ mkcd() {
 
 source /usr/share/nvm/init-nvm.sh
 source /usr/share/doc/pkgfile/command-not-found.bash
-source ~/gitstatus/gitstatus.prompt.sh
+source ~/.config/gitstatus/gitstatus.prompt.sh
 
 export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 6)\]\h\[$(tput setaf 4)\]:\[$(tput setaf 5)\]\w ${GITSTATUS_PROMPT}\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\$ '
 
