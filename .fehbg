@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-max --image-bg "#2d353b" "$HOME/.local/share/backgrounds/everforest_minimal_cat.png"
