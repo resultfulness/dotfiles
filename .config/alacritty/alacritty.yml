@@ -1,9 +1,32 @@
 font:
   normal:
     family: ComicShannsMono Nerd Font
+    # family: FiraCode Nerd Font
 
-  size: 16.0
+  size: 14.0
 
 key_bindings:
   - { key: Period,   mods: Control,        chars: "\x1b[46;5u" }
-  - { key: F,        mods: Control|Shift,  chars: "\x1b[70;6u" }
+
+colors:
+    primary:
+      background: '#2d353b'
+      foreground: '#d3c6aa'
+    normal:
+      black:   '#475258'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'
+    bright:
+      black:   '#475258'
+      red:     '#e67e80'
+      green:   '#a7c080'
+      yellow:  '#dbbc7f'
+      blue:    '#7fbbb3'
+      magenta: '#d699b6'
+      cyan:    '#83c092'
+      white:   '#d3c6aa'

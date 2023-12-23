@@ -1,4 +1,20 @@
 #
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+    alacritty
+
+# program launcher
+super + @space
+    dmenu_run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
 # bspwm hotkeys
 #
 
@@ -47,7 +63,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }w
+super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
@@ -94,52 +110,21 @@ super + ctrl + shift + space
 
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
-	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l}
-	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
-	bspc node -v {-40 0,0 40,0 -40,40 0}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
-# wm independent hotkeys
+# shortcuts
 #
 
-# terminal emulator
-super + Return
-    alacritty
-
-super + shift + Return
-    alacritty --class floater
-
-# rofi
-super + @space
-    ~/.config/rofi/launchers/type-1/launcher.sh
-
-# powermenu
-super + control + q
-    ~/.config/rofi/powermenu/type-3/powermenu.sh
-
-# make sxhkd reload its configuration files:
-super + Escape
-    pkill -USR1 -x sxhkd
-
-# quick logout
-super + control + x
-    loginctl kill-session $XDG_SESSION_ID
-
-# screen lock
-super + x
-    i3lock
-
-#
-# Special Hotkeys
-#
-
-# Screenshot
+# screenshot
 # super posts to clipboard
 {_,super + } Print
     flameshot gui {_,--clipboard}
@@ -155,35 +140,17 @@ alt + F4
 super + e
     thunar
 
-super + F1
-    $HOME/.config/polybar/launch.sh	
-
-super + F2
+super + shift + f
     firefox
 
-super + shift + F2
+super + shift + b
     qutebrowser
 
-super + F3
-    thunar
-
-super + F5
+super + semicolon
     alacritty -e tmux new ~/.local/bin/sessionizer
 
-super + control + F5
-    alacritty -e tmux new ~/.local/bin/config-sessionizer
-
-super + F6
-    codium
-
-super + F9
-    steam
-
-super + F10
-    discord & discover-overlay
-
-super + F12
-    killall -q polybar
+super + shift + p
+    steam && discord & discover-overlay
 
 alt + F1
     alacritty -e htop
@@ -195,9 +162,8 @@ super + shift + e
     emote
 
 # color picker
-# shift opens gui, no shift just copies to clipboard
-super + {_,shift + } c
-    gpick {-o -s | xclip -r -sel c,_}
+super + shift + r
+    gpick {-o -s | xclip -r -sel c}
 
 # calculator
 super + shift + semicolon
@@ -205,7 +171,7 @@ super + shift + semicolon
 
 #
 # XF86 keybindings
-# 
+#
 
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
     pactl set-sink-volume 1 {-5%,+5%}
