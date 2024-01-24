@@ -15,6 +15,10 @@ setdefaultsinkvol() {
     pactl set-sink-volume $(getdefaultsinkname) $1%
 }
 
+toggledefaultsinkmute() {
+    pactl set-sink-mute $(getdefaultsinkname) toggle
+}
+
 case $1 in
     get)
         echo $(getdefaultsinkvol)
@@ -40,8 +44,10 @@ case $1 in
             setdefaultsinkvol $(($2-$(getdefaultsinkvol | sed 's/%//')))
         fi
         ;;
+    tgl)
+        toggledefaultsinkmute
+        ;;
     *)
-        echo "usage: $(basename $0) get/set/inc/dec"
+        echo "usage: $(basename $0) get/set/inc/dec/tgl"
         ;;
 esac
-
