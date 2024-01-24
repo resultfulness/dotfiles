@@ -41,7 +41,7 @@ case $1 in
         if [[ -z $2 ]]; then
             echo "provide value to decrement by"
         else
-            setdefaultsinkvol $(($2-$(getdefaultsinkvol | sed 's/%//')))
+            setdefaultsinkvol $(($(getdefaultsinkvol | sed 's/%//')-$2))
         fi
         ;;
     tgl)
