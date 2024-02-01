@@ -150,7 +150,7 @@ super + semicolon
     alacritty -e tmux new ~/.local/bin/sessionizer
 
 super + shift + p
-    steam && discord & discover-overlay
+    steam & discord & discover-overlay
 
 alt + F1
     alacritty -e htop
