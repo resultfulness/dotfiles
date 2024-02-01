@@ -174,10 +174,10 @@ super + shift + semicolon
 #
 
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
-    pactl set-sink-volume 1 {-5%,+5%}
+    volume_util {dec,inc} 5
 
 XF86AudioMute
-    pactl set-sink-mute 1 toggle
+    volume_util tgl
 
 {XF86AudioPrev,XF86AudioNext,XF86AudioPlay,XF86AudioStop}
     playerctl {previous,next,play-pause,stop}
@@ -189,7 +189,7 @@ XF86Explorer
     thunar
 
 XF86Search
-    ~/.config/rofi/launchers/type-1/launcher.sh
+    dmenu_run
 
 XF86Calculator
     alacritty --class floater -e bc --mathlib
