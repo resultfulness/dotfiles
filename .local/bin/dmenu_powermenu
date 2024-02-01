@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case $(echo "Poweroff
+Reboot
+Logout" | dmenu -i) in
+    Poweroff)
+        systemctl poweroff ;;
+    Reboot)
+        systemctl reboot ;;
+    Logout)
+        loginctl kill-session $XDG_SESSION_ID ;;
+esac
