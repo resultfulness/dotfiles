@@ -2,29 +2,20 @@
 
 wmname LG3D &
 
-#  xrandr --auto
-xrandr --output HDMI-1 --mode 2560x1440 --rate 144
-# multi monitor setup
-#  xrandr_args=""
-#
-#  for monitor in $(bspc query -M --names); do
-#      if [[ $monitor == "HDMI"* ]]; then
-#          xrandr_args+=" --output $monitor --mode 2560x1440 --rate 144"
-#      else
-#          xrandr_args+=" --output $monitor --auto"
-#      fi
-#  done
-#
-#  xrandr $xrandr_args
+# monitors script
+# change if more than one screen
+m=$(bspc query -M --names | head -n1)
+m_pc="HDMI*"
+if [[ $m == $m_pc ]]; then
+    xrandr --output $m --mode 2560x1440 --rate 144
+else
+    xrandr --output $m --auto
+fi
 
-
-bspc monitor -d I II III IV V VI VII # VIII IX X
-# bspc monitor HDMI-0 -d I II III IV V VI VII VIII IX
-# bspc monitor HDMI-1 -d X
+bspc monitor $m -d I II III IV V VI VII # VIII IX X
 
 
 bspc config window_gap          12
-
 bspc config border_width        2
 bspc config focused_border_color \#A7C080
 bspc config normal_border_color \#2D353B
@@ -34,9 +25,6 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config pointer_follows_focus false
 bspc config focus_follows_pointer true
-
-bspc config top_padding 0
-
 
 bspc rule -a firefox desktop='^1'
 bspc rule -a steam desktop='^3'
@@ -52,20 +40,23 @@ bspc rule -a Inkscape desktop='^6'
 bspc rule -a Arandr state=floating
 bspc rule -a Gpick state=floating
 bspc rule -a MessageWin state=floating
-bspc rule -a "Tor Browser" state=floating
 bspc rule -a Pavucontrol state=floating
-bspc rule -a surf state=floating
 
-~/.fehbg
+function open_once() {
+    pgrep -x $1 > /dev/null || $* &
+}
+
+open_once sxhkd
+
+~/.fehbg &
+~/.config/polybar/launch.sh &
+/usr/bin/picom -b &
+/usr/bin/dunst &
+/usr/bin/xsetroot -cursor_name left_ptr &
 
 nm-applet --indicator &
-pgrep -x sxhkd > /dev/null || sxhkd &
 nvidia-settings --load-config-only &
-~/.config/polybar/launch.sh &
-/usr/bin/dunst &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-picom -b &
-xsetroot -cursor_name left_ptr &
-syncthing -no-browser &
-thunderbird &
-signal-desktop &
+
+open_once syncthing -no-browser
+open_once signal-desktop

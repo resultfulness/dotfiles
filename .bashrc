@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -11,7 +7,8 @@ then
 fi
 export PATH
 
-[[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
+# limits recursive functions, see 'man bash'
+[[ -z "$FUNCNEST" ]] && export FUNCNEST=100
 
 alias ls='ls --color=auto'
 alias ll='ls -lahv --ignore=..'   # show long listing of all except ".."
@@ -26,26 +23,16 @@ bind '"\e[B":history-search-forward'
 shopt -s autocd
 HISTSIZE= HISTFILESIZE=
 
-export EDITOR=nvim
 alias nv='nvim'
 alias vim='nvim'
-export VISUAL=vim
-export TERMINAL=alacritty
-export ANDROID_HOME=$HOME/Android/Sdk
-export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-bind '"\C-f": "sessionizer\n"'
+export EDITOR=nvim
+export VISUAL=nvim
 
 alias s='startx'
 alias g='git'
-alias c='codium'
 alias v='nvim .'
 alias rf='rm -rf'
 alias cp='cp -rv'
-alias rem='yay -Rcnsu'
-alias ka='killall'
 alias :q='exit'
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/personal/.dotfiles --work-tree=$HOME'
@@ -55,7 +42,6 @@ mkcd() {
        cd -P -- "$1"
 }
 
-source /usr/share/nvm/init-nvm.sh
 source /usr/share/doc/pkgfile/command-not-found.bash
 source ~/.config/gitstatus/gitstatus.prompt.sh
 
