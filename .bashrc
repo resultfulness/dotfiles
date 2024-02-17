@@ -45,7 +45,7 @@ mkcd() {
 source /usr/share/doc/pkgfile/command-not-found.bash
 source ~/.config/gitstatus/gitstatus.prompt.sh
 
-export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 6)\]\h\[$(tput setaf 4)\]:\[$(tput setaf 5)\]\w ${GITSTATUS_PROMPT}\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\$ '
+export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][ \[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 6)\]\h\[$(tput setaf 4)\]:\[$(tput setaf 5)\]\W ${GITSTATUS_PROMPT}\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\$ '
 
 # pnpm
 export PNPM_HOME="/home/alicja/.local/share/pnpm"
