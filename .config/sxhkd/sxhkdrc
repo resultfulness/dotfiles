@@ -176,6 +176,9 @@ super + shift + semicolon
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
     volume_util {dec,inc} 5
 
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+    brightnessctl set {+10%,10%-}
+
 XF86AudioMute
     volume_util tgl
 
