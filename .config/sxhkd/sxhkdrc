@@ -7,8 +7,11 @@ super + Return
     alacritty
 
 # program launcher
-super + @space
+super + shift + @space
     dmenu_run
+
+super + @space
+    j4-dmenu-desktop
 
 # make sxhkd reload its configuration files:
 super + Escape
