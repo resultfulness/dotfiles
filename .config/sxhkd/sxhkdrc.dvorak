@@ -4,6 +4,9 @@
 super + Return
     alacritty
 
+super + t
+    alacritty
+
 # program launcher
 super + shift + @space
     dmenu_run
@@ -42,7 +45,7 @@ super + g
 # state/flags
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {d,shift + d,s,f}
     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
@@ -65,8 +68,8 @@ super + {_,shift + }c
     bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-    bspc desktop -f {prev,next}.local
+# super + bracket{left,right}
+#     bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -79,7 +82,7 @@ super + {o,i}
     bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
+super + {_,shift + }{ampersand,bracketleft,braceleft,braceright,parenleft,equal,asterisk,parenright,plus,bracketright}
     bspc {desktop -f,node -d} '^{1-9,10}'
 
 
@@ -149,7 +152,7 @@ super + a ; super + m
     killall sxhkd && setxkbmap pl && sxhkd -m 1
 
 super + a ; super + shift + m
-    killall sxhkd && setxkbmap pl dvp && sxhkd -m 1 -c ~/.config/sxhkd/sxhkdrc.dvorak
+    killall sxhkd && setxkbmap pl dvp && sxhkd -m 1
 
 super + semicolon
     alacritty -e tmux new ~/.local/bin/sessionizer
