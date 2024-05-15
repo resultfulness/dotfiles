@@ -46,14 +46,14 @@ function open_once() {
     pgrep -x $1 > /dev/null || $* &
 }
 
-open_once sxhkd -c ~/.config/sxhkd/sxhkdrc.dvorak
+open_once sxhkd
 
 ~/.fehbg &
 ~/.config/polybar/launch.sh &
 /usr/bin/picom -b &
 /usr/bin/dunst &
 /usr/bin/xsetroot -cursor_name left_ptr &
-setxkbmap pl dvp
+setxkbmap pl
 
 nm-applet --indicator &
 nvidia-settings --load-config-only &
