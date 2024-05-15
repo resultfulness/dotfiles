@@ -32,3 +32,8 @@ family = "ComicShannsMono Nerd Font"
 chars = "\u001B[46;5u"
 key = "Period"
 mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[59;5u"
+key = "Semicolon"
+mods = "Control"
