@@ -9,9 +9,7 @@ alias ls='ls --color=auto'
 alias ll='ls -lahv --ignore=..'   # show long listing of all except ".."
 alias l='ls -lahv --ignore=.?*'   # show long listing but no hidden dotfiles except "."
 
-## Use the up and down arrow keys for finding a command in history
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+stty -ixon
 
 shopt -s autocd
 HISTSIZE= HISTFILESIZE=
