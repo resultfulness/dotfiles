@@ -10,7 +10,7 @@ sudo pacman -S git stow alacritty bspwm dunst neovim ripgrep fzf picom polybar s
   xorg-xsetroot xorg-setxkbmap polkit-gnome thunar thunar-volman gvfs thunar-archive-plugin
   xarchiver thunar-media-tags-plugin dmenu j4-dmenu-desktop xorg-xkill brightnessctl
   playerctl flameshot xorg-xinit pkgfile xorg-server otf-comicshanns-nerd bash-completion
-  firefox python python-dbus python-gobject openssh lxappearance
+  firefox python python-dbus python-gobject openssh lxappearance-gtk3
 git clone --depth=1 https://github.com/romkatv/gitstatus.git $HOME/.config/gitstatus
 ```
 
