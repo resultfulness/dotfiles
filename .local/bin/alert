@@ -1,7 +1,3 @@
 #!/bin/sh
 
-if [ "$1" != "Spotify" ]; then 
-    mpv "$HOME/.local/share/sounds/cat-meow-04.ogg"
-else
-    mpv "$HOME/.local/share/sounds/toast-in.ogg"
-fi
+mpv "$HOME/.local/share/sounds/pop.ogg"

@@ -312,13 +312,6 @@
     summary = "*"
     script = ~/.local/bin/alert
 
-[Spotify]
-    appname = "Spotify"
-    background = "#121212"
-    foreground = "#ffffff"
-    frame_color = "#1ED760"
-    new_icon = /usr/share/icons/Papirus/32x32/apps/Spotify.svg
-
 [Discord]
     desktop_entry = "discord"
     background = "#313338"
