@@ -16,8 +16,8 @@ HISTSIZE= HISTFILESIZE=
 
 alias nv='nvim'
 alias vim='nvim'
-export EDITOR='nvim -e'
-export VISUAL=nvim
+export VISUAL='nvim -e'
+export EDITOR=nvim
 
 alias s='startx'
 alias g='git'

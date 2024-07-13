@@ -12,7 +12,7 @@ else
     xrandr --output $m --auto
 fi
 
-bspc monitor $m -d I II III IV V VI VII # VIII IX X
+bspc monitor $m -d I II III IV V VI VII VIII IX X
 
 
 bspc config window_gap          12
@@ -26,27 +26,15 @@ bspc config gapless_monocle      true
 bspc config pointer_follows_focus false
 bspc config focus_follows_pointer true
 
-bspc rule -a firefox desktop='^1'
-bspc rule -a steam desktop='^3'
 bspc rule -a notificationtoasts_6_desktop state=floating focus=off
 bspc rule -a 'Friends List' state=floating focus=off
 bspc rule -a 'Steam - News' state=floating focus=off
-bspc rule -a discord desktop='^4' focus=off follow=off
-bspc rule -a thunderbird desktop='^4' focus=off follow=off
-bspc rule -a Signal desktop='^4' focus=off follow=off
-bspc rule -a Spotify desktop='^5'
-bspc rule -a Gimp-2.10 desktop='^6'
-bspc rule -a Inkscape desktop='^6'
 bspc rule -a Arandr state=floating
 bspc rule -a Gpick state=floating
 bspc rule -a MessageWin state=floating
 bspc rule -a Pavucontrol state=floating
 
-function open_once() {
-    pgrep -x $1 > /dev/null || $* &
-}
-
-open_once sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
 
 ~/.fehbg &
 ~/.config/polybar/launch.sh &
@@ -59,5 +47,5 @@ nm-applet --indicator &
 nvidia-settings --load-config-only &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-open_once syncthing -no-browser
-open_once signal-desktop
+pgrep syncthing > /dev/null || syncthing -no-browser &
+pgrep signal-desktop > /dev/null || signal-desktop &

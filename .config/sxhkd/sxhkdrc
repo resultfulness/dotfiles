@@ -19,7 +19,7 @@ super + Escape
 # >>> bspwm hotkeys
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + ctrl + {q,r}
     bspc {quit,wm -r}
 
 # close and kill
@@ -159,13 +159,13 @@ super + semicolon
 # >>> XF86 keybindings
 
 {XF86AudioLowerVolume,XF86AudioRaiseVolume}
-    volume_util {dec,inc} 5
+    pactl set-sink-volume @DEFAULT_SINK@ {-5%,+5%}
+
+{XF86AudioMute,XF86AudioMicMute}
+    pactl {set-sink-mute,set-source-mute} {@DEFAULT_SINK@,@DEFAULT_SOURCE@} toggle
 
 {XF86MonBrightnessUp,XF86MonBrightnessDown}
     brightnessctl set {+10%,10%-}
-
-XF86AudioMute
-    volume_util tgl
 
 {XF86AudioPrev,XF86AudioNext,XF86AudioPlay,XF86AudioStop}
     playerctl {previous,next,play-pause,stop}
