@@ -42,6 +42,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 /usr/bin/dunst &
 /usr/bin/xsetroot -cursor_name left_ptr &
 setxkbmap pl
+/usr/bin/kanata -c ~/.config/kanata/config.kbd
 
 nm-applet --indicator &
 nvidia-settings --load-config-only &
