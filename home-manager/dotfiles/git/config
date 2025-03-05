@@ -1,0 +1,9 @@
+[user]
+	email = alicja.rrosiak@gmail.com
+	name = resultfulness
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	autocrlf = input
+
