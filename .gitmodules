@@ -1,0 +1,3 @@
+[submodule "home-manager/dotfiles/nvim"]
+	path = home-manager/dotfiles/nvim
+	url = git@github.com:resultfulness/nvim.git

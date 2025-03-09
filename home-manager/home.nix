@@ -98,6 +98,7 @@ label#plugin {
     git.source = "${dotfiles}/git";
     hypr.source = "${dotfiles}/hypr";
     keepmenu.source = "${dotfiles}/keepmenu";
+    nvim.source = "${dotfiles}/nvim";
     tmux.source = "${dotfiles}/tmux";
     waybar.source = "${dotfiles}/waybar";
   };
