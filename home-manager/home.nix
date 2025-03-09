@@ -14,7 +14,15 @@ in
   home.homeDirectory = homeDirectory;
   home.stateVersion = "24.11";
   
-  home.packages = with pkgs; [ lf ];
+  home.packages = with pkgs; [
+    lf
+    inputs.zen.packages."${pkgs.system}".default
+    neovim
+    ripgrep
+    fzf
+    lua-language-server
+    gcc
+  ];
 
   programs.ags = {
     enable = true;
@@ -132,7 +140,7 @@ label#plugin {
     WINEPREFIX = "${config.home.sessionVariables.XDG_DATA_HOME}/wine";
 
     TERMINAL = "alacritty";
-    BROWSER = "firefox";
+    BROWSER = "zen";
     EDITOR = "nvim";
     VISUAL = "nvim";
 

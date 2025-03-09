@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:aylur/ags";
+    zen.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:

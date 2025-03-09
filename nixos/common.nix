@@ -54,10 +54,6 @@
   environment.systemPackages = with pkgs; [
     git
     alacritty
-    neovim
-    lua-language-server
-    gcc
-    stow
     rofi-wayland
     unstable.keepmenu
     keepassxc
@@ -74,7 +70,6 @@
     pavucontrol
     unstable.signal-desktop
     libreoffice-qt6-fresh
-    librewolf
   ];
 
   programs.hyprland.enable = true;
@@ -90,7 +85,6 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true;
   programs.xfconf.enable = true;
-  programs.firefox.enable = true;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "ComicShannsMono" ]; })
