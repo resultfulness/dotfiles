@@ -70,6 +70,7 @@
     pavucontrol
     unstable.signal-desktop
     libreoffice-qt6-fresh
+    networkmanagerapplet
   ];
 
   programs.hyprland.enable = true;
