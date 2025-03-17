@@ -71,6 +71,7 @@
     unstable.signal-desktop
     libreoffice-qt6-fresh
     networkmanagerapplet
+    openconnect
   ];
 
   programs.hyprland.enable = true;

@@ -12,9 +12,5 @@
     enable = true;
     joinNetworks = [ "ebe7fbd445c277b3" ];
   };
-
-  environment.systemPackages = with pkgs; [
-    openconnect
-  ];
 }
 
