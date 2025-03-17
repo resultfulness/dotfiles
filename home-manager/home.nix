@@ -71,8 +71,8 @@ in
     enable = true;
     gtk2.configLocation = "${config.home.sessionVariables.XDG_CONFIG_HOME}/gtk-2.0/gtkrc";
     gtk3.bookmarks = [
-      "file://${homeDirectory}/personal"
-      "file://${homeDirectory}/uni"
+      "file://${homeDirectory}/documents/personal"
+      "file://${homeDirectory}/documents/uni"
       "file://${homeDirectory}/games"
       "file://${homeDirectory}/documents"
       "file://${homeDirectory}/downloads"
