@@ -69,7 +69,8 @@ button {
 #memory,
 #temperature,
 #network,
-#pulseaudio {
+#pulseaudio,
+#mpris {
     padding: 0 10px;
 }
 
@@ -95,6 +96,10 @@ button {
 
 #window {
     color: @purple;
+}
+
+#mpris {
+    color: @green;
 }
 
 .modules-right, .modules-left, .modules-center {
