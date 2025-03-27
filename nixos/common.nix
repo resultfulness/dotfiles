@@ -11,6 +11,8 @@
   networking.firewall.allowedTCPPorts = [ 22000 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   services.openssh.enable = true;
+  services.resolved.enable = true;
+  services.tailscale.enable = true;
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
 

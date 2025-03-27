@@ -22,6 +22,8 @@ in
     fzf
     lua-language-server
     gcc
+    file-roller
+    p7zip
   ];
 
   programs.ags = {
