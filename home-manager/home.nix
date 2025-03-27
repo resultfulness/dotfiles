@@ -44,6 +44,10 @@ in
       . "$HOME/.bashrc"
     '';
     "${homeDirectory}/pictures/blahaj.png".source = "${dotfiles}/blahaj.png";
+    ".local/bin" = {
+      source = "${dotfiles}/scripts";
+      recursive = true;
+    };
   };
   xdg.configFile = {
     "alacritty/alacritty.toml".source = "${dotfiles}/alacritty/alacritty.toml";
