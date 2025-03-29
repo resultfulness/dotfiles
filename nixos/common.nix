@@ -13,6 +13,10 @@
   services.openssh.enable = true;
   services.resolved.enable = true;
   services.tailscale.enable = true;
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [ "ebe7fbd445c277b3" ];
+  };
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.cnijfilter2 ];
 
@@ -82,7 +86,7 @@
     gcc
     file-roller
     p7zip
-    inputs.anyrun.packages.${pkgs.system}.anyrun
+    inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     inputs.zen.packages."${pkgs.system}".default
   ];
 

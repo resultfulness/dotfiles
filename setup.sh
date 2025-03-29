@@ -15,5 +15,5 @@ done
 ln -sf "$home_config/.bashrc" ~/.bashrc
 ln -sf "$home_config/.profile" ~/.profile
 
-rm "$XDG_PICTURES_DIR/wallpapers"
-ln -sf "$home_config/wallpapers" "$XDG_PICTURES_DIR/wallpapers"
+rm ~/pictures/wallpapers
+ln -sf "$home_config/wallpapers" ~/pictures/wallpapers
