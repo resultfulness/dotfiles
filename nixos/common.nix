@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -74,6 +74,16 @@
     libreoffice-qt6-fresh
     networkmanagerapplet
     openconnect
+    lf
+    neovim
+    ripgrep
+    fzf
+    lua-language-server
+    gcc
+    file-roller
+    p7zip
+    inputs.anyrun.packages.${pkgs.system}.anyrun
+    inputs.zen.packages."${pkgs.system}".default
   ];
 
   programs.hyprland.enable = true;
