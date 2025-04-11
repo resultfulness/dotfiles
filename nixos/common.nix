@@ -86,6 +86,7 @@
     gcc
     file-roller
     p7zip
+    imagemagick
     inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins
     inputs.zen.packages."${pkgs.system}".default
   ];

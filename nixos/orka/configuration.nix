@@ -5,6 +5,9 @@
     ./hardware-configuration.nix
     ../common.nix
   ];
+  
+  networking.firewall.allowedTCPPorts = [ 25565 5173 ];
+  networking.firewall.allowedUDPPorts = [ 25565 ];
 
   networking.hostName = "orka";
   services.mullvad-vpn = {
@@ -25,6 +28,9 @@
   environment.systemPackages = with pkgs; [
       unstable.prismlauncher
       qbittorrent
+      unstable.vintagestory
+      wine
+      winetricks
   ];
 
   programs.steam = {
