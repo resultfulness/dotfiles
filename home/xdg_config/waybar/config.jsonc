@@ -1,22 +1,22 @@
 // -*- mode: jsonc -*-
 {
-    "margin-top": 10,
-    "margin-left": 20,
-    "margin-right": 20,
     "height": 30,
     "modules-left": [
+        "hyprland/workspaces",
+        "custom/sep",
         "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/workspaces"
     ],
     "modules-right": [
         "mpris",
+        "custom/sep",
         "pulseaudio",
+        "custom/sep",
         "network",
-        "battery",
-        "custom/brightness",
+        "custom/sep",
         "clock",
+        "custom/sep",
         "tray"
     ],
     "hyprland/window": {
@@ -44,31 +44,6 @@
         "format": "{:%H:%M:%S}",
         "interval": 1
     },
-    
-    "custom/brightness": {
-    "format": "{icon} {percent}%",
-    "format-alt": "{percent}%",
-    "on-click": "brightnessctl set +10%", 
-    "on-scroll-up": "brightnessctl set +5%", 
-    "on-scroll-down": "brightnessctl set 5%-", 
-    "tooltip": false, 
-    "format-icons": {
-        "low": "",    
-        "medium": "", 
-        "high": ""    
-    }
-},
-
-    
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
-    },
     "battery": {
         "states": {
             "warning": 30,
@@ -87,32 +62,29 @@
             ""
         ]
     },
+    "network": {
+        "format": "{icon} {ipaddr}",
+        "format-disconnected": "{icon} No Internet",
+        "format-linked": "{icon}  {ifname} (no IP)",
+        "format-alt": "{icon} {bandwidthUpBytes} | {bandwidthDownBytes}",
+        "tooltip-format": "{icon} {ifname}: {ipaddr}/{cidr}  {gwaddr}",
+        "tooltip-format-wifi": "{wifiIcon} {essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "{icon} disconnected",
+        "on-click-right": "nm-connection-editor",
+        "format-icons": {
+            "ethernet": "󰈀",
+            "disconnected": "",
+            "wifi": [
+                "",
+                ""
+            ]
+        },
+        "interval": 2
+    }
 
 
-"network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format": "{icon} {ipaddr}",
-    "format-disconnected": "{icon} No Internet",
-    "format-linked": "{icon}  {ifname} (No IP)",
-    "format-alt": "{icon} {bandwidthUpBytes} | {bandwidthDownBytes}",
-    "tooltip-format": "{icon} {ifname}: {ipaddr}/{cidr}  {gwaddr}",
-    "tooltip-format-wifi": "{wifiIcon} {essid} ({signalStrength}%)",
-    "tooltip-format-ethernet": "{icon} {ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "{icon} Disconnected",
-    "on-click-right": "nm-connection-editor",
-    "format-icons": {
-        "ethernet": "",
-        "disconnected": "⚠",
-        "wifi": [
-            "",
-            ""
-        ]
-    },
-    "interval": 2
-}
-
-
-,
+    ,
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{volume}% {icon} {format_source}",
@@ -135,6 +107,11 @@
     },
     "mpris": {
         "format": "{status}: {dynamic}",
+        "title-len": 50,
+        "artist-len": 20,
         "dynamic-order": ["title", "artist"]
+    },
+    "custom/sep": {
+        "format": "|"
     }
 }

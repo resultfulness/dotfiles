@@ -1,29 +1,15 @@
-@define-color bg_dim      #232a2e;
-@define-color bg0         #2d353b;
-@define-color bg1         #343f44;
-@define-color bg2         #3d484d;
-@define-color bg3         #475258;
-@define-color bg4         #4f585e;
-@define-color bg5         #56635f;
-@define-color bg_visual   #543a48;
-@define-color bg_red      #514045;
-@define-color bg_green    #425047;
-@define-color bg_blue     #3a515d;
-@define-color bg_yellow   #4d4c43;
-@define-color fg          #d3c6aa;
-@define-color red         #e67e80;
-@define-color orange      #e69875;
-@define-color yellow      #dbbc7f;
-@define-color green       #a7c080;
-@define-color aqua        #83c092;
-@define-color blue        #7fbbb3;
-@define-color purple      #d699b6;
-@define-color grey0       #7a8478;
-@define-color grey1       #859289;
-@define-color grey2       #9da9a0;
-@define-color statusline1 #a7c080;
-@define-color statusline2 #d3c6aa;
-@define-color statusline3 #e67e80;
+@define-color pink  #fa6ca6;
+@define-color bg    #3b2e36;
+@define-color s0    #463740;
+@define-color s1    #513f4a;
+@define-color fg    #d3b8ca;
+@define-color subtle    #a79aa2;
+@define-color muted #776772;
+@define-color red   #fa6a7e;
+@define-color orange    #fa9e6a;
+@define-color yellow    #fae66a;
+@define-color blue      #6ac6fa;
+@define-color green     #c6fa6a;
 
 * {
     all: unset;
@@ -33,7 +19,7 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: @bg;
 }
 
 button {
@@ -46,16 +32,16 @@ button {
 }
 
 #workspaces button.empty {
-    color: @bg5;
+    color: @subtle;
 }
 
 #workspaces button.active {
-    color: @purple;
+    color: @pink;
 }
 
 /* Style for hovered workspace buttons */
 #workspaces button:hover {
-    background: @bg1;
+    background: @s0;
 }
 
 /* Style for urgent workspace buttons */
@@ -71,7 +57,6 @@ button {
 #network,
 #pulseaudio,
 #mpris {
-    padding: 0 10px;
 }
 
 #pulseaudio {
@@ -91,11 +76,11 @@ button {
 }
 
 #clock {
-    color: @purple;
+    color: @fg;
 }
 
 #window {
-    color: @purple;
+    color: @fg;
 }
 
 #mpris {
@@ -103,8 +88,6 @@ button {
 }
 
 .modules-right, .modules-left, .modules-center {
-    background-color: @bg0;
-    border-radius: 10000px;
 }
 
 .modules-right {
@@ -112,7 +95,7 @@ button {
 }
 
 .modules-left {
-    padding: 0 20px;
+    padding: 0 10px;
 }
 
 .modules-center {
@@ -124,5 +107,11 @@ button {
 }
 
 #pulseaudio.muted {
-    color: @bg5;
+    color: @muted;
+}
+
+#custom-sep {
+    padding: 0 10px;
+    font-weight: bold;
+    color: @muted;
 }
