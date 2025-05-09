@@ -26,6 +26,8 @@
       (time)
       (pad :content "|")
       (date)
+      (pad :content "|")
+      (systray :icon-size 20)
       )))
 
 (defvar time-expand false)
