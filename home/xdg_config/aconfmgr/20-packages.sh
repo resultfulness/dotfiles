@@ -9,6 +9,7 @@ AddPackage cups
 AddPackage pipewire
 AddPackage pipewire-pulse
 AddPackage otf-comicshanns-nerd
+AddPackage noto-fonts-emoji
 AddPackage --foreign yay
 AddPackage --foreign yay-debug
 AddPackage --foreign aconfmgr-git
@@ -28,11 +29,13 @@ AddPackage bash-completion
 AddPackage brightnessctl
 AddPackage fzf
 AddPackage imagemagick
+AddPackage jq
 AddPackage lf
 AddPackage man-db
 AddPackage man-pages
 AddPackage playerctl
 AddPackage ripgrep
+AddPackage socat
 AddPackage starship
 AddPackage tmux
 AddPackage xdg-utils
@@ -52,7 +55,8 @@ AddPackage hyprland
 AddPackage hyprpaper
 AddPackage hyprpicker
 AddPackage hyprpolkitagent
-AddPackage waybar
+AddPackage hyprsunset
+AddPackage --foreign eww
 AddPackage --foreign flameshot-git # flameshot hyprland support
 AddPackage xdg-desktop-portal-gtk
 AddPackage xdg-desktop-portal-hyprland
@@ -111,8 +115,11 @@ if [ "$HOSTNAME" = "orka" ]; then
     # chromium screencast
     AddPackage protobuf
     AddPackage libmicrodns
+
+    AddPackage android-tools
+    AddPackage gimp
 fi
 
 if [ "$HOSTNAME" = "haai" ]; then
-    AddPackage amd-ucode # Microcode update image for AMD CPUs
+    AddPackage amd-ucode
 fi
