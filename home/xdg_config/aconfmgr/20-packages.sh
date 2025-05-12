@@ -10,12 +10,15 @@ AddPackage pipewire
 AddPackage pipewire-pulse
 AddPackage otf-comicshanns-nerd
 AddPackage noto-fonts-emoji
+AddPackage acpi
+AddPackage efibootmgr
 AddPackage --foreign yay
 AddPackage --foreign yay-debug
 AddPackage --foreign aconfmgr-git
 AddPackage --foreign kanata
 
 # networking
+AddPackage iwd
 AddPackage --foreign mullvad-vpn-bin
 AddPackage openconnect
 AddPackage tailscale
@@ -61,7 +64,6 @@ AddPackage --foreign flameshot-git # flameshot hyprland support
 AddPackage xdg-desktop-portal-gtk
 AddPackage xdg-desktop-portal-hyprland
 AddPackage adwaita-icon-theme
-AddPackage --foreign anyrun-git
 AddPackage --foreign walker-bin
 AddPackage libqalculate
 AddPackage rofi-wayland
