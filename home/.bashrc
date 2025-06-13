@@ -13,13 +13,16 @@ alias gpush='git push'
 alias gs='git status'
 alias H='Hyprland'
 
-export PATH="$PATH:$HOME/.local/bin"
-
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
 eval "$(starship init bash)"
 
+export SCRIPT_PATH="$HOME/.local/bin"
+case ":$PATH:" in
+  *":$SCRIPT_PATH:"*) ;;
+  *) export PATH="$SCRIPT_PATH:$PATH" ;;
+esac
 # pnpm
 export PNPM_HOME="/home/alice/.local/share/pnpm"
 case ":$PATH:" in
@@ -27,3 +30,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+case ":$PATH:" in
+  *":$CARGO_HOME/bin:"*) ;;
+  *) export PATH="$CARGO_HOME/bin:$PATH" ;;
+esac
