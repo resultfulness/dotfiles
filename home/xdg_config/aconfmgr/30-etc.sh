@@ -5,3 +5,4 @@ CopyFile /etc/nsswitch.conf
 CopyFile /etc/pacman.conf
 CreateLink /etc/resolv.conf /run/systemd/resolve/stub-resolv.conf
 CopyFile /etc/sudoers
+CopyFile /etc/fuse.conf

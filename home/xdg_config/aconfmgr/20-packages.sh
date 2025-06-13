@@ -11,14 +11,13 @@ AddPackage pipewire-pulse
 AddPackage otf-comicshanns-nerd
 AddPackage noto-fonts-emoji
 AddPackage --foreign yay
-AddPackage --foreign yay-debug
-AddPackage --foreign aconfmgr-git
 AddPackage --foreign kanata
 
 # networking
 AddPackage --foreign mullvad-vpn-bin
 AddPackage openconnect
 AddPackage tailscale
+AddPackage wireguard-tools
 AddPackage zerotier-one
 
 # cli
@@ -29,8 +28,11 @@ AddPackage bash-completion
 AddPackage brightnessctl
 AddPackage fzf
 AddPackage imagemagick
+AddPackage ghostscript
 AddPackage jq
-AddPackage lf
+AddPackage yazi
+AddPackage ueberzugpp
+AddPackage --foreign dragon-drop
 AddPackage man-db
 AddPackage man-pages
 AddPackage playerctl
@@ -40,9 +42,11 @@ AddPackage starship
 AddPackage tmux
 AddPackage xdg-utils
 AddPackage --foreign xdg-terminal-exec
+AddPackage sshfs
 # dev
 AddPackage neovim
 AddPackage lua-language-server
+AddPackage rust-analyzer
 AddPackage pnpm
 AddPackage rustup
 AddPackage nfs-utils
@@ -52,6 +56,7 @@ AddPackage tcpdump
 
 # graphical desktop
 AddPackage hyprland
+AddPackage hyprlock
 AddPackage hyprpaper
 AddPackage hyprpicker
 AddPackage hyprpolkitagent
@@ -61,8 +66,6 @@ AddPackage --foreign flameshot-git # flameshot hyprland support
 AddPackage xdg-desktop-portal-gtk
 AddPackage xdg-desktop-portal-hyprland
 AddPackage adwaita-icon-theme
-AddPackage --foreign anyrun-git
-AddPackage --foreign walker-bin
 AddPackage libqalculate
 AddPackage rofi-wayland
 AddPackage dunst
@@ -83,6 +86,7 @@ AddPackage nsxiv
 AddPackage pavucontrol
 AddPackage qbittorrent
 AddPackage signal-desktop
+AddPackage spotify-launcher
 AddPackage --foreign zen-browser-bin
 
 
@@ -116,8 +120,14 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage protobuf
     AddPackage libmicrodns
 
+    AddPackage cuda
+    AddPackage moonlight-qt
+    AddPackage --foreign sunshine
+
     AddPackage android-tools
     AddPackage gimp
+
+    AddPackage --foreign cnijfilter2
 fi
 
 if [ "$HOSTNAME" = "haai" ]; then
