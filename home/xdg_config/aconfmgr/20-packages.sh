@@ -1,3 +1,5 @@
+AddPackage --foreign aconfmgr-git
+
 # system
 AddPackage linux
 AddPackage linux-firmware
@@ -10,6 +12,7 @@ AddPackage pipewire
 AddPackage pipewire-pulse
 AddPackage otf-comicshanns-nerd
 AddPackage noto-fonts-emoji
+AddPackage noto-fonts-cjk
 AddPackage --foreign yay
 AddPackage --foreign kanata
 
@@ -53,8 +56,8 @@ AddPackage nfs-utils
 AddPackage smbclient
 AddPackage tcpdump
 
-
 # graphical desktop
+AddPackage --foreign hyprprop-git # xprop for Hyprland
 AddPackage hyprland
 AddPackage hyprlock
 AddPackage hyprpaper
@@ -62,16 +65,15 @@ AddPackage hyprpicker
 AddPackage hyprpolkitagent
 AddPackage hyprsunset
 AddPackage --foreign eww
-AddPackage --foreign flameshot-git # flameshot hyprland support
 AddPackage xdg-desktop-portal-gtk
 AddPackage xdg-desktop-portal-hyprland
 AddPackage adwaita-icon-theme
-AddPackage libqalculate
 AddPackage rofi-wayland
 AddPackage dunst
 AddPackage nwg-look
 AddPackage wl-clipboard
 AddPackage grim
+AddPackage slurp
 
 # gui
 AddPackage alacritty
@@ -80,6 +82,7 @@ AddPackage chromium
 AddPackage file-roller
 AddPackage keepassxc
 AddPackage --foreign keepmenu
+AddPackage ydotool
 AddPackage libreoffice-still
 AddPackage mpv
 AddPackage nsxiv
@@ -128,6 +131,9 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage gimp
 
     AddPackage --foreign cnijfilter2
+
+    AddPackage mdbook
+    AddPackage obs-studio
 fi
 
 if [ "$HOSTNAME" = "haai" ]; then
