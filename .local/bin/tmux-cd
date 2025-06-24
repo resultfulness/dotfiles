@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+dirs=(
+    ~/documents/projects/
+    ~/documents/uni/
+    ~/
+)
+
+if [ "$#" -eq 0 ]; then
+    full_dir=$(find ${dirs[@]} -maxdepth 1 -type d | fzf)
+else
+    full_dir=$1
+fi
+
+cd $full_dir
+
+dir=$(basename $full_dir | tr . _)
+
+if [[ -z $TMUX ]] && [[ -z $(pgrep tmux) ]]; then
+    tmux new -s $dir
+    exit 0
+fi
+
+if ! tmux has-session -t=$dir 2>/dev/null; then
+    tmux new -s $dir -d
+fi
+
+tmux switch -t $dir

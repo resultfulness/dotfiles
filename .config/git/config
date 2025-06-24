@@ -1,0 +1,9 @@
+[user]
+	email = alicja.rrosiak@gmail.com
+	name = milkoverflow
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	autocrlf = input
+
