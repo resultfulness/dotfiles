@@ -21,7 +21,6 @@ AddPackage --foreign mullvad-vpn-bin
 AddPackage openconnect
 AddPackage tailscale
 AddPackage wireguard-tools
-AddPackage zerotier-one
 
 # cli
 AddPackage 7zip
@@ -33,6 +32,7 @@ AddPackage fzf
 AddPackage imagemagick
 AddPackage ghostscript
 AddPackage jq
+AddPackage htop
 AddPackage yazi
 AddPackage ueberzugpp
 AddPackage --foreign dragon-drop
@@ -54,7 +54,7 @@ AddPackage pnpm
 AddPackage rustup
 AddPackage nfs-utils
 AddPackage smbclient
-AddPackage tcpdump
+AddPackage syncthing
 
 # graphical desktop
 AddPackage --foreign hyprprop-git # xprop for Hyprland
@@ -65,6 +65,7 @@ AddPackage hyprpicker
 AddPackage hyprpolkitagent
 AddPackage hyprsunset
 AddPackage --foreign eww
+AddPackage --foreign quickshell
 AddPackage xdg-desktop-portal-gtk
 AddPackage xdg-desktop-portal-hyprland
 AddPackage adwaita-icon-theme
@@ -74,6 +75,7 @@ AddPackage nwg-look
 AddPackage wl-clipboard
 AddPackage grim
 AddPackage slurp
+AddPackage qt5-wayland
 
 # gui
 AddPackage alacritty
@@ -131,6 +133,7 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage gimp
 
     AddPackage --foreign cnijfilter2
+    AddPackage simple-scan
 
     AddPackage mdbook
     AddPackage obs-studio
