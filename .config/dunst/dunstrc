@@ -198,6 +198,10 @@
 #    summary = "foobar"
 #    skip_display = yes
 
+[spotify]
+appname = Spotify
+timeout = 10
+
 #[signed_on]
 #    appname = Pidgin
 #    summary = "*signed on*"
