@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo mkdir /etc/kanata
+sudo mkdir -p /etc/kanata
 sudo cp ./kanata.kbd /etc/kanata/kanata.kbd
 sudo install -m 644 ./kanata.service /lib/systemd/system/kanata.service
 sudo systemctl daemon-reload

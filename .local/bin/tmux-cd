@@ -3,7 +3,6 @@
 dirs=(
     ~/documents/projects/
     ~/documents/uni/
-    ~/
 )
 
 if [ "$#" -eq 0 ]; then
