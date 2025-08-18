@@ -18,3 +18,4 @@ AddPackage starship
 AddPackage tmux
 AddPackage ueberzugpp
 AddPackage yazi
+AddPackage zellij

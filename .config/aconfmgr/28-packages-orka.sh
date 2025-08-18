@@ -24,9 +24,8 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage docker
     AddPackage docker-compose
 
-    AddPackage cuda
     AddPackage moonlight-qt
-    AddPackage --foreign sunshine
+    AddPackage --foreign sunshine-bin
 
     AddPackage --foreign cnijfilter2
     AddPackage simple-scan

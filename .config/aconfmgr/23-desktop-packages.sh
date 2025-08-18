@@ -41,3 +41,7 @@ AddPackage --foreign zen-browser-bin
 AddPackage --foreign dragon-drop
 AddPackage xdg-utils
 AddPackage --foreign xdg-terminal-exec
+
+AddPackage mpd
+AddPackage mpc
+AddPackage rmpc
