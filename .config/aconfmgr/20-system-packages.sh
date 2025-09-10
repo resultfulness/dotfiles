@@ -6,6 +6,7 @@ AddPackage linux-firmware
 AddPackage base
 AddPackage base-devel
 AddPackage git
+AddPackage wget
 AddPackage openssh
 AddPackage cups
 AddPackage pipewire

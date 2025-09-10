@@ -4,12 +4,11 @@ AddPackage hyprpaper
 AddPackage hyprpicker
 AddPackage hyprpolkitagent
 AddPackage hyprsunset
-AddPackage --foreign hyprprop-git
-AddPackage --foreign eww
+AddPackage wev
 AddPackage --foreign quickshell
 AddPackage xdg-desktop-portal-hyprland
 AddPackage xdg-desktop-portal-gtk
-AddPackage rofi-wayland
+AddPackage rofi
 AddPackage dunst
 AddPackage nwg-look
 AddPackage wl-clipboard

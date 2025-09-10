@@ -8,6 +8,8 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage prismlauncher
     AddPackage steam
     AddPackage --foreign vintagestory
+    AddPackage discord
+    AddPackage --foreign discover-overlay
     AddPackage wine-staging
     AddPackage wine-mono
     AddPackage winetricks
@@ -32,7 +34,16 @@ if [ "$HOSTNAME" = "orka" ]; then
 
     AddPackage android-tools
     AddPackage gimp
+    AddPackage inkscape
     AddPackage mdbook
     AddPackage obs-studio
     AddPackage tenacity
+
+    # tauri
+    AddPackage chromium
+    AddPackage webkit2gtk-4.1
+    AddPackage appmenu-gtk-module
+    AddPackage libappindicator-gtk3
+    AddPackage xdotool
+    AddPackage --foreign android-studio
 fi
