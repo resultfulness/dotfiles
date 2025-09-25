@@ -12,3 +12,5 @@ AddPackage go
 
 AddPackage sqlitebrowser
 AddPackage watchexec
+
+AddPackage helix

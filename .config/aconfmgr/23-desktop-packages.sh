@@ -8,7 +8,7 @@ AddPackage wev
 AddPackage --foreign quickshell
 AddPackage xdg-desktop-portal-hyprland
 AddPackage xdg-desktop-portal-gtk
-AddPackage rofi
+AddPackage bemenu
 AddPackage dunst
 AddPackage nwg-look
 AddPackage wl-clipboard
@@ -30,7 +30,7 @@ AddPackage ydotool
 AddPackage libreoffice-still
 AddPackage mpv
 AddPackage nsxiv
-AddPackage pavucontrol
+AddPackage obsidian
 AddPackage qbittorrent
 AddPackage signal-desktop
 AddPackage spotify-launcher

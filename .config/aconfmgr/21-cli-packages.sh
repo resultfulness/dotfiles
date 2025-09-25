@@ -18,5 +18,6 @@ AddPackage sshfs
 AddPackage starship
 AddPackage tmux
 AddPackage ueberzugpp
+AddPackage wiremix
 AddPackage yazi
 AddPackage zellij

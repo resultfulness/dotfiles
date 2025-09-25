@@ -14,8 +14,10 @@ AddPackage pipewire-pulse
 AddPackage --foreign yay
 AddPackage --foreign kanata
 
+AddPackage networkmanager
 AddPackage openconnect
 AddPackage wireguard-tools
+AddPackage systemd-resolvconf
 AddPackage nfs-utils
 AddPackage smbclient
 AddPackage syncthing
