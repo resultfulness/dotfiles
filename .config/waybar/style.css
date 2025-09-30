@@ -1,0 +1,44 @@
+window#waybar {
+  background-color: transparent;
+  font-family: CaskaydiaMono Nerd Font;
+  font-size: 16px;
+}
+
+.modules-center {
+  background-color: #0d0509;
+  color: #faeefa;
+  border-radius: 999px;
+  padding: 8px;
+}
+
+tooltip {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #0d0509;
+  color: #faeefa;
+}
+
+#tray menu {
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #0d0509;
+  color: #faeefa;
+}
+
+#tray menu menuitem {
+  padding: 4px;
+}
+
+#tray menu menuitem:hover {
+  background-color: #fa6ca6;
+  color: #0d0509;
+}
+
+label.module {
+  color: #faeefa;
+  font-weight: 600;
+}
+
+#custom-sep {
+  padding: 0 4px;
+}

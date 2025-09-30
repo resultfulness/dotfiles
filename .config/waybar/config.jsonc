@@ -1,0 +1,45 @@
+{
+  "layer": "top",
+  "exclusive": false,
+  "start_hidden": true,
+  "reload_style_on_change": true,
+  "margin-top": 20,
+  "spacing": 8,
+  "modules-left": [
+  ],
+  "modules-center": [
+    "tray",
+    "custom/sep",
+    "clock",
+    "custom/sep",
+    "wireplumber",
+    "battery"
+  ],
+  "modules-right": [
+  ],
+  "clock": {
+    "tooltip": true,
+    "format": "{:%H:%M %Y-%m-%d}",
+    "tooltip": false,
+    "interval": 60
+  },
+  "tray": {
+    "icon-size": 18,
+    "show-passive-items": "true"
+  },
+  "battery": {
+    "format": "󰇙 {icon} {capacity}%",
+    "format-charging": "󰇙  {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "wireplumber": {
+    "format": "{volume}% @ {node_name}",
+    "format-muted": "[MUTED] {volume}% @ {node_name}",
+    "tooltip": false,
+    "scroll-step": 10.0,
+    "on-click": "volctl cycle"
+  },
+  "custom/sep": {
+    "format": "󰇙"
+  }
+}

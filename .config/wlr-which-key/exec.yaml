@@ -26,34 +26,18 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
+  - key: "w"
+    desc: zen-browser
+    cmd: zen-browser
   - key: "p"
-    desc: Power
-    submenu:
-      - key: "s"
-        desc: Sleep
-        cmd: systemctl suspend
-      - key: "r"
-        desc: Reboot
-        cmd: reboot
-      - key: "o"
-        desc: Off
-        cmd: poweroff
-  - key: "v"
-    desc: volume
-    submenu:
-      - key: "j"
-        desc: down
-        cmd: volctl down
-        keep_open: true
-      - key: "k"
-        desc: up
-        cmd: volctl up
-        keep_open: true
-      - key: "m"
-        desc: mute
-        cmd: volctl toggle
-        keep_open: true
-      - key: "c"
-        desc: cycle
-        cmd: volctl cycle
-        keep_open: true
+    desc: prismlauncher
+    cmd: prismlauncher
+  - key: "s"
+    desc: steam
+    cmd: steam
+  - key: "d"
+    desc: discord
+    cmd: discord&discover-overlay
+  - key: "n"
+    desc: sunshine
+    cmd: sunshine
