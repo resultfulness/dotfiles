@@ -1,3 +1,7 @@
+@define-color bg #2d1e22;
+@define-color fg #d3b8ca;
+@define-color pink #fa6ca6;
+
 window#waybar {
   background-color: transparent;
   font-family: CaskaydiaMono Nerd Font;
@@ -5,24 +9,24 @@ window#waybar {
 }
 
 .modules-center {
-  background-color: #0d0509;
-  color: #faeefa;
+  background-color: @bg;
+  color: @fg;
   border-radius: 999px;
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 tooltip {
   border-radius: 8px;
   padding: 8px;
-  background-color: #0d0509;
-  color: #faeefa;
+  background-color: @bg;
+  color: @fg;
 }
 
 #tray menu {
   border-radius: 8px;
   padding: 8px;
-  background-color: #0d0509;
-  color: #faeefa;
+  background-color: @bg;
+  color: @fg;
 }
 
 #tray menu menuitem {
@@ -30,12 +34,12 @@ tooltip {
 }
 
 #tray menu menuitem:hover {
-  background-color: #fa6ca6;
-  color: #0d0509;
+  background-color: @pink;
+  color: @bg;
 }
 
 label.module {
-  color: #faeefa;
+  color: @fg;
   font-weight: 600;
 }
 

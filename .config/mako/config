@@ -1,38 +1,8 @@
 font=CaskaydiaMono Nerd Font 10
 
-background-color=#0d0509
-text-color=#faeefa
+background-color=#2d1e22
+text-color=#d3b8ca
 
 border-size=2
 border-color=#fa6ca6
 border-radius=8
-
-[app-name=volctl-volume]
-anchor=bottom-center
-group-by=app-name
-format=<b>%s</b>\n%b
-width=200
-border-size=0
-border-radius=16
-progress-color=source #fa6ca6ff
-outer-margin=0,0,200,0
-padding=0
-layer=overlay
-default-timeout=1000
-
-[app-name=volctl-muted]
-anchor=bottom-center
-group-by=app-name
-format=<b>%s</b>\n%b
-width=200
-border-size=0
-border-radius=16
-background-color=#32323280
-progress-color=source #ffffff80
-outer-margin=0,0,20,0
-padding=0
-layer=overlay
-default-timeout=1000
-
-[hidden=true]
-invisible=1
