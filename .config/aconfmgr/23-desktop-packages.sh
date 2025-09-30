@@ -6,10 +6,12 @@ AddPackage hyprpolkitagent
 AddPackage hyprsunset
 AddPackage wev
 AddPackage --foreign quickshell
+AddPackage waybar
 AddPackage xdg-desktop-portal-hyprland
 AddPackage xdg-desktop-portal-gtk
-AddPackage bemenu
-AddPackage dunst
+AddPackage fuzzel
+AddPackage --foreign wlr-which-key
+AddPackage mako
 AddPackage nwg-look
 AddPackage wl-clipboard
 AddPackage grim
@@ -18,6 +20,7 @@ AddPackage qt5-wayland
 AddPackage adwaita-icon-theme
 
 AddPackage otf-comicshanns-nerd
+AddPackage ttf-cascadia-mono-nerd
 AddPackage noto-fonts
 AddPackage noto-fonts-emoji
 AddPackage noto-fonts-cjk

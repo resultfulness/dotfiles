@@ -38,6 +38,7 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage mdbook
     AddPackage obs-studio
     AddPackage tenacity
+    AddPackage --foreign mullvad-vpn-bin
 
     # tauri
     AddPackage chromium

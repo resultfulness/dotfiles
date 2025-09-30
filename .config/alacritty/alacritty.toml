@@ -5,7 +5,7 @@ opacity = 0.9
 size = 16.0
 
 [font.normal]
-family = "ComicShannsMono Nerd Font"
+family = "CaskaydiaMono Nerd Font"
 
 [colors.bright]
 black = "#463740"
