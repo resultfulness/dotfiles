@@ -20,7 +20,7 @@ AddPackage qt5-wayland
 AddPackage adwaita-icon-theme
 
 AddPackage otf-comicshanns-nerd
-AddPackage ttf-cascadia-mono-nerd
+AddPackage ttf-noto-nerd
 AddPackage noto-fonts
 AddPackage noto-fonts-emoji
 AddPackage noto-fonts-cjk

@@ -1,45 +1,74 @@
 {
   "layer": "top",
-  "exclusive": false,
-  "start_hidden": true,
   "reload_style_on_change": true,
-  "margin-top": 20,
-  "spacing": 8,
+  "margin-top": 0,
+  "spacing": 16,
   "modules-left": [
+    "mpris"
   ],
   "modules-center": [
-    "tray",
-    "custom/sep",
     "clock",
-    "custom/sep",
-    "wireplumber",
-    "battery"
+    "hyprland/workspaces"
   ],
   "modules-right": [
+    "tray",
+    "wireplumber",
+    "custom/sunset",
+    "battery"
   ],
   "clock": {
-    "tooltip": true,
-    "format": "{:%H:%M %Y-%m-%d}",
+    "format": "{:%H:%M:%S %Y-%m-%d}",
     "tooltip": false,
-    "interval": 60
+    "interval": 1
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    },
+    "format-icons": {
+      "default": " ",
+      "active": " ",
+      "urgent": " "
+    }
   },
   "tray": {
     "icon-size": 18,
     "show-passive-items": "true"
   },
   "battery": {
-    "format": "󰇙 {icon} {capacity}%",
+    "format": "{icon} {capacity}%",
     "format-charging": "󰇙  {capacity}%",
     "format-icons": ["", "", "", "", ""]
   },
   "wireplumber": {
     "format": "{volume}% @ {node_name}",
-    "format-muted": "[MUTED] {volume}% @ {node_name}",
+    "format-muted": "{volume}% @ {node_name}",
     "tooltip": false,
     "scroll-step": 10.0,
-    "on-click": "volctl cycle"
+    "on-click": "volctl cycle",
+    "on-click-right": "volctl toggle"
   },
-  "custom/sep": {
-    "format": "󰇙"
+  "mpris": {
+    "player": "mpd",
+    "format": "{status_icon} {dynamic}",
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "dynamic-order": ["title", "artist"],
+    "dynamic-separator": " - ",
+    "dynamic-len": 50,
+    "ellipsis": "..."
+  },
+  "custom/sunset": {
+    "exec": "scrctl get",
+    "format": " {text}",
+    "interval": "once",
+    "on-scroll-up": "scrctl up",
+    "on-scroll-down": "scrctl down",
+    "on-click": "scrctl toggle-filter"
   }
 }

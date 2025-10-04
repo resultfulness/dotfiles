@@ -1,26 +1,28 @@
 # Theming
-font: ComicShannsMono Nerd Font 12
-background: "#2d1e22"
+font: NotoSansM Nerd Font 12
+background: "#2d1e22cc"
 color: "#d3b8ca"
 border: "#fa6ca6"
 separator: " ➜ "
-border_width: 2
+border_width: 0
 corner_r: 10
 padding: 16
 rows_per_column: 5
 
 anchor: center
 margin_right: 0
-margin_bottom: 0
+margin_bottom: 12
 margin_left: 0
 margin_top: 0
+
+# namespace: "launcher"
 
 inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
   - key: "p"
-    desc: Power
+    desc: power
     submenu:
       - key: "s"
         desc: Sleep

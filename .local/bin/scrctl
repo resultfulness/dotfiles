@@ -1,0 +1,30 @@
+#!/bin/sh
+
+INCREMENT="${2:-5}"
+
+case $1 in
+    up)
+        hyprctl hyprsunset gamma "+$INCREMENT" >/dev/null
+        ;;
+    down)
+        hyprctl hyprsunset gamma "-$INCREMENT" >/dev/null
+        ;;
+    get)
+        hyprctl hyprsunset gamma | cut -d'.' -f1
+        ;;
+    toggle-filter)
+        temp=$(hyprctl hyprsunset temperature)
+        if [ "$temp" == "6500" ]; then
+            hyprctl hyprsunset temperature 4000 >/dev/null
+        else
+            hyprctl hyprsunset temperature 6500 >/dev/null
+        fi
+        ;;
+    reset)
+        hyprctl hyprsunset gamma 100 >/dev/null
+        hyprctl hyprsunset temperature 6500 >/dev/null
+        ;;
+    *)
+        echo "unknown command $1"
+        ;;
+esac
