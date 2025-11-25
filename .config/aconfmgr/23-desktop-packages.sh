@@ -5,7 +5,7 @@ AddPackage hyprpicker
 AddPackage hyprpolkitagent
 AddPackage hyprsunset
 AddPackage wev
-AddPackage --foreign quickshell
+AddPackage quickshell
 AddPackage waybar
 AddPackage xdg-desktop-portal-hyprland
 AddPackage xdg-desktop-portal-gtk
@@ -39,11 +39,14 @@ AddPackage signal-desktop
 AddPackage spotify-launcher
 AddPackage --foreign xclicker
 AddPackage --foreign zen-browser-bin
+AddPackage zathura
+AddPackage zathura-pdf-mupdf
 
 AddPackage --foreign dragon-drop
 AddPackage xdg-utils
 AddPackage --foreign xdg-terminal-exec
 
 AddPackage mpd
+AddPackage mpd-mpris
 AddPackage mpc
 AddPackage rmpc

@@ -11,6 +11,8 @@ AddPackage imagemagick
 AddPackage jq
 AddPackage man-db
 AddPackage man-pages
+AddPackage pandoc-cli
+AddPackage python-weasyprint
 AddPackage playerctl
 AddPackage ripgrep
 AddPackage socat
@@ -21,3 +23,4 @@ AddPackage ueberzugpp
 AddPackage wiremix
 AddPackage yazi
 AddPackage zellij
+AddPackage zip
