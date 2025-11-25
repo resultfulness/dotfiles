@@ -11,7 +11,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 
 export TERMINAL="alacritty"
-export BROWSER="zen"
+export BROWSER="zen-browser"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
