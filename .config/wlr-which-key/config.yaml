@@ -70,3 +70,6 @@ menu:
       - key: "n"
         desc: sunshine
         cmd: sunshine
+      - key: "o"
+        desc: obsidian
+        cmd: obsidian

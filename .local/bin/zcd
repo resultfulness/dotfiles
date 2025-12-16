@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+SEARCH_DIRS=(~/documents/projects/ ~/documents/uni/)
+ZLAYOUT_FILES=$(ls "$XDG_CONFIG_HOME/zellij/layouts")
+
+layouts=()
+for lf in $ZLAYOUT_FILES; do
+    layouts+=("${lf%.kdl}")
+done
+
+prompt_dirs() {
+    find "${SEARCH_DIRS[@]}" -maxdepth 1 -type d | fzf --prompt="select dir> "
+}
+
+prompt_layouts() {
+    printf "%s\n" "${layouts[@]}" | fzf --prompt="select layout> "
+}
+
+dir="${1:-$(prompt_dirs)}"
+if [ -z "$dir" ]; then
+    echo "no work dir specified"
+    exit
+fi
+
+cd "$dir" || exit
+
+session_name=$(basename "$(pwd)" | tr . _)
+
+# try to attach to existing session
+if zellij a "$session_name" 2>/dev/null; then
+    exit
+fi
+
+layout="${2:-$(prompt_layouts)}"
+if [ -z "$layout" ]; then
+    echo "no layout specified"
+    exit
+fi
+
+zellij -l "$layout" a -c "$session_name"

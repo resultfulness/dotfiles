@@ -31,6 +31,7 @@ AddPackage keepassxc
 AddPackage --foreign keepmenu
 AddPackage ydotool
 AddPackage libreoffice-still
+AddPackage libreoffice-still-pl
 AddPackage mpv
 AddPackage nsxiv
 AddPackage obsidian

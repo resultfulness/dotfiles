@@ -3,6 +3,7 @@ AddPackage bash-completion
 AddPackage bluez
 AddPackage bluez-utils
 AddPackage brightnessctl
+AddPackage ddcutil
 AddPackage fd
 AddPackage fzf
 AddPackage ghostscript

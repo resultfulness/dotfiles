@@ -14,7 +14,7 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage winetricks
 
     # virtualization
-    AddPackage qemu-base
+    AddPackage qemu-full
     AddPackage virt-manager
     AddPackage virt-viewer
     AddPackage bridge-utils

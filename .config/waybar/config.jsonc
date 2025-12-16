@@ -13,7 +13,8 @@
   "modules-right": [
     "tray",
     "wireplumber",
-    "custom/sunset",
+    // "custom/sunset",
+    "backlight",
     "battery"
   ],
   "clock": {
@@ -70,5 +71,10 @@
     "on-scroll-up": "scrctl up",
     "on-scroll-down": "scrctl down",
     "on-click": "scrctl toggle-filter"
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""],
+    "scroll-step": 10
   }
 }

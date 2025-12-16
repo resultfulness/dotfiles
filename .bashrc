@@ -8,6 +8,7 @@ alias ls='ls --color=auto'
 
 alias ecfg='cd ~/.config/dotfiles && nvim .'
 alias ta='tmux attach'
+alias za='zellij attach'
 alias gs='git status'
 alias H='Hyprland'
 alias n='nvim .'
