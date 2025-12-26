@@ -32,6 +32,7 @@ AddPackage --foreign keepmenu
 AddPackage ydotool
 AddPackage libreoffice-still
 AddPackage libreoffice-still-pl
+AddPackage moonlight-qt
 AddPackage mpv
 AddPackage nsxiv
 AddPackage obsidian
@@ -40,8 +41,6 @@ AddPackage signal-desktop
 AddPackage spotify-launcher
 AddPackage --foreign xclicker
 AddPackage --foreign zen-browser-bin
-AddPackage zathura
-AddPackage zathura-pdf-mupdf
 
 AddPackage --foreign dragon-drop
 AddPackage xdg-utils

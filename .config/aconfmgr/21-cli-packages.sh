@@ -6,14 +6,11 @@ AddPackage brightnessctl
 AddPackage ddcutil
 AddPackage fd
 AddPackage fzf
-AddPackage ghostscript
 AddPackage htop
 AddPackage imagemagick
 AddPackage jq
 AddPackage man-db
 AddPackage man-pages
-AddPackage pandoc-cli
-AddPackage python-weasyprint
 AddPackage playerctl
 AddPackage ripgrep
 AddPackage socat
