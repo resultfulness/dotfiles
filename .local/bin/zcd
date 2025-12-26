@@ -3,7 +3,7 @@
 SEARCH_DIRS=(~/documents/projects/ ~/documents/uni/)
 ZLAYOUT_FILES=$(ls "$XDG_CONFIG_HOME/zellij/layouts")
 
-layouts=()
+layouts=(".zlayout.kdl")
 for lf in $ZLAYOUT_FILES; do
     layouts+=("${lf%.kdl}")
 done
