@@ -1,0 +1,10 @@
+#!/bin/sh
+
+windows=$(niri msg --json windows)
+index=$(echo "$windows" | jq .[].title | tr -d \" | fuzzel --dmenu --index)
+
+[ -z "$index" ] && exit;
+
+id=$(echo "$windows" | jq ".[$index].id")
+
+niri msg action focus-window --id "$id"

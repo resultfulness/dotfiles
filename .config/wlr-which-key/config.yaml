@@ -1,13 +1,12 @@
 # Theming
-font: NotoSansM Nerd Font 12
-background: "#2d1e22cc"
-color: "#d3b8ca"
-border: "#fa6ca6"
-separator: " ➜ "
-border_width: 0
+font: NotoSansM Nerd Font 14
+background: "#fcf8ec"
+color: "#210f1a"
+border: "#d968ac"
+separator: "  ➜  "
+border_width: 4
 corner_r: 10
 padding: 16
-rows_per_column: 5
 
 anchor: center
 margin_right: 0
@@ -21,6 +20,15 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
+  - key: "b"
+    desc: brightness
+    submenu:
+      - key: "m"
+        desc: ddcutil setvcp 10 100
+        cmd: ddcutil setvcp 10 100
+      - key: "n"
+        desc: ddcutil setvcp 10 0
+        cmd: ddcutil setvcp 10 0
   - key: "p"
     desc: power
     submenu:
@@ -52,8 +60,8 @@ menu:
         desc: cycle
         cmd: volctl cycle
         keep_open: true
-  - key: "x"
-    desc: exec
+  - key: "d"
+    desc: run
     submenu:
       - key: "w"
         desc: zen-browser
@@ -73,3 +81,24 @@ menu:
       - key: "o"
         desc: obsidian
         cmd: obsidian
+      - key: "k"
+        desc: keepass
+        cmd: keepassxc
+      - key: "l"
+        desc: libreoffice
+        cmd: libreoffice
+      - key: "g"
+        desc: gimp
+        cmd: gimp
+      - key: "m"
+        desc: music
+        cmd: spotify-launcher
+      - key: "v"
+        desc: volume
+        cmd: alacritty -e wiremix -v output -s extracompat
+      - key: "space"
+        desc: fuzzel
+        cmd: fuzzel
+  - key: "w"
+    desc: windows
+    cmd: niri:window-picker

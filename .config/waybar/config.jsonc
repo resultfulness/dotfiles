@@ -1,19 +1,18 @@
 {
   "layer": "top",
   "reload_style_on_change": true,
-  "margin-top": 0,
+  "margin": "0 0 0 0",
   "spacing": 16,
   "modules-left": [
+    "niri/workspaces",
     "mpris"
   ],
   "modules-center": [
-    "clock",
-    "hyprland/workspaces"
+    "clock"
   ],
   "modules-right": [
     "tray",
     "wireplumber",
-    // "custom/sunset",
     "backlight",
     "battery"
   ],
@@ -23,15 +22,9 @@
     "interval": 1
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
     "on-click": "activate",
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
-    },
-    "format-icons": {
-      "default": " ",
-      "active": " ",
-      "urgent": " "
     }
   },
   "tray": {
@@ -52,7 +45,6 @@
     "on-click-right": "volctl toggle"
   },
   "mpris": {
-    "player": "mpd",
     "format": "{status_icon} {dynamic}",
     "status-icons": {
       "playing": "",
@@ -63,14 +55,6 @@
     "dynamic-separator": " - ",
     "dynamic-len": 50,
     "ellipsis": "..."
-  },
-  "custom/sunset": {
-    "exec": "scrctl get",
-    "format": " {text}",
-    "interval": "once",
-    "on-scroll-up": "scrctl up",
-    "on-scroll-down": "scrctl down",
-    "on-click": "scrctl toggle-filter"
   },
   "backlight": {
     "format": "{percent}% {icon}",
