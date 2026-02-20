@@ -12,12 +12,12 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage wine-staging
     AddPackage wine-mono
     AddPackage winetricks
+    AddPackage --foreign vintagestory
 
     # virtualization
     AddPackage qemu-full
     AddPackage virt-manager
     AddPackage virt-viewer
-    AddPackage bridge-utils
     AddPackage dmidecode
     AddPackage dnsmasq
     AddPackage openbsd-netcat
@@ -26,6 +26,7 @@ if [ "$HOSTNAME" = "orka" ]; then
     AddPackage docker-compose
 
     AddPackage --foreign sunshine-bin
+    AddPackage --foreign icu76
 
     AddPackage --foreign cnijfilter2
     AddPackage simple-scan

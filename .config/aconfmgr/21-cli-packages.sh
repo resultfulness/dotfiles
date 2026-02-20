@@ -1,24 +1,30 @@
-AddPackage 7zip
 AddPackage bash-completion
-AddPackage bluez
-AddPackage bluez-utils
+
+AddPackage 7zip
+AddPackage zip
+AddPackage imagemagick
+AddPackage man-db
+AddPackage jq
+AddPackage man-pages
 AddPackage brightnessctl
 AddPackage ddcutil
+AddPackage playerctl
+
+AddPackage bat
 AddPackage fd
 AddPackage fzf
-AddPackage htop
-AddPackage imagemagick
-AddPackage jq
-AddPackage man-db
-AddPackage man-pages
-AddPackage playerctl
 AddPackage ripgrep
-AddPackage socat
+AddPackage nix
 AddPackage sshfs
+
 AddPackage starship
 AddPackage tmux
-AddPackage ueberzugpp
+AddPackage zellij
+
+AddPackage btop
+AddPackage htop
 AddPackage wiremix
 AddPackage yazi
-AddPackage zellij
-AddPackage zip
+AddPackage --foreign dragon-drop
+AddPackage xdg-utils
+AddPackage --foreign xdg-terminal-exec

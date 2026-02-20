@@ -11,7 +11,7 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
-export TERMINAL="kitty"
+export TERMINAL="alacritty"
 export BROWSER="zen-browser"
 export EDITOR="nvim"
 export VISUAL="nvim"
