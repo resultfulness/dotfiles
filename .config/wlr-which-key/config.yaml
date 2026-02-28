@@ -99,6 +99,3 @@ menu:
       - key: "space"
         desc: fuzzel
         cmd: fuzzel
-  - key: "w"
-    desc: windows
-    cmd: niri:window-picker
