@@ -67,6 +67,7 @@ return {
             svelte = {},
             emmet_language_server = {},
             pyright = {},
+            clangd = {},
         }
 
         local capabilities = require("blink.cmp").get_lsp_capabilities()
