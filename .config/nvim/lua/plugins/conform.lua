@@ -11,7 +11,7 @@ return {
                 },
                 typescript = {
                     "prettier"
-                }
+                },
             },
         })
 

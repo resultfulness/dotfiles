@@ -11,7 +11,16 @@ return {
             bang_expansion = true,
             default_command = {
                 c = "cc -o %:r % && ./%:r",
+                rust = "cargo run",
             },
         }
+
+        vim.keymap.set("n", "<leader>cn", function()
+            vim.cmd("Compile")
+        end)
+
+        vim.keymap.set("n", "<leader>cc", function()
+            vim.cmd("Recompile")
+        end)
     end,
 }
