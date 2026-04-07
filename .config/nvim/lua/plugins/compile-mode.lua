@@ -1,11 +1,8 @@
 return {
     "ej-shafran/compile-mode.nvim",
     version = "^5.0.0",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-    },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-        ---@type CompileModeOpts
         vim.g.compile_mode = {
             input_word_completion = true,
             bang_expansion = true,
@@ -15,12 +12,7 @@ return {
             },
         }
 
-        vim.keymap.set("n", "<leader>cn", function()
-            vim.cmd("Compile")
-        end)
-
-        vim.keymap.set("n", "<leader>cc", function()
-            vim.cmd("Recompile")
-        end)
-    end,
+        vim.keymap.set("n", "<leader>cc", "<cmd>Compile<cr>")
+        vim.keymap.set("n", "<leader>cC", "<cmd>Recompile<cr>")
+    end
 }

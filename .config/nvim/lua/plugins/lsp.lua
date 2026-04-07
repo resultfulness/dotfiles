@@ -1,88 +1,98 @@
-return {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-        { "j-hui/fidget.nvim", opts = {} },
-        "saghen/blink.cmp",
-    },
-    config = function()
-        vim.api.nvim_create_autocmd("LspAttach", {
-            group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-            callback = function(event)
-                vim.keymap.set(
-                    "n",
-                    "gd",
-                    vim.lsp.buf.definition,
-                    { buffer = event.buf }
-                )
-                vim.keymap.set(
-                    "n",
-                    "grd",
-                    vim.lsp.buf.definition,
-                    { buffer = event.buf }
-                )
-                vim.keymap.set(
-                    "n",
-                    "gD",
-                    vim.lsp.buf.declaration,
-                    { buffer = event.buf }
-                )
-                vim.keymap.set(
-                    "n",
-                    "g.",
-                    vim.lsp.buf.code_action,
-                    { buffer = event.buf }
-                )
-
-                require("lsp-setup").setup_lsp_hover(event)
-                require("lsp-setup").setup_hint_toggle(event, "g:")
-            end,
-        })
-
-        vim.diagnostic.config({
-            severity_sort = true,
-            float = { source = "if_many" },
-            underline = { severity = vim.diagnostic.severity.ERROR },
-            virtual_text = {
-                source = "if_many",
-                spacing = 2,
-            },
-        })
-
-        local servers = {
-            lua_ls = {
-                settings = {
-                    Lua = {
-                        completion = { callSnippet = "Replace" },
-                        diagnostics = { globals = { "vim" } },
-                        workspace = {
-                            library = vim.api.nvim_get_runtime_file("", true),
-                        },
-                        telemetry = { enable = false },
+local function lsp_setup()
+    require("fidget").setup({})
+    local lsp_servers = {
+        lua_ls = {
+            ---@type lspconfig.settings.lua_ls
+            settings = {
+                Lua = {
+                    completion = { callSnippet = "Replace" },
+                    diagnostics = { globals = { "vim" } },
+                    workspace = {
+                        library = vim.api.nvim_get_runtime_file("", true),
                     },
+                    telemetry = { enable = false },
                 },
             },
-            rust_analyzer = {},
-            ts_ls = {},
-            cssls = {},
-            svelte = {},
-            emmet_language_server = {},
-            pyright = {},
-            clangd = {},
-            jdtls = {},
-        }
+        },
+        rust_analyzer = {},
+        ts_ls = {},
+        cssls = {},
+        svelte = {},
+        emmet_language_server = {},
+        pyright = {},
+        clangd = {},
+        jdtls = {},
+    }
 
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
+    for server_name, server_settings in pairs(lsp_servers) do
+        vim.lsp.config(server_name, server_settings)
+        vim.lsp.enable(server_name)
+    end
 
-        for server_name in pairs(servers) do
-            local server = servers[server_name]
-            server.capabilities = vim.tbl_deep_extend(
-                "force",
-                {},
-                capabilities,
-                server.capabilities or {}
-            )
-            vim.lsp.config(server_name, server)
-            vim.lsp.enable(server_name)
-        end
-    end,
+    vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+        callback = function(e)
+            local opts = {
+                noremap = true,
+                silent = true,
+                buffer = e.buf,
+                desc = "vim.lsp.buf.definition()",
+            }
+            vim.keymap.set("n", "grd", vim.lsp.buf.definition, opts)
+
+            local client = vim.lsp.get_client_by_id(e.data.client_id)
+            if not client then
+                return
+            end
+
+            if client:supports_method("textDocument/inlayHint", e.buf) then
+                vim.keymap.set("n", "grh", function()
+                    local is_hint_enabled =
+                        vim.lsp.inlay_hint.is_enabled({ bufnr = e.buf })
+                    vim.lsp.inlay_hint.enable(not is_hint_enabled)
+                end, { desc = "toggle inlay hint" })
+            end
+
+            if
+                client:supports_method("textDocument/documentHighlight", e.buf)
+            then
+                local highlight_augroup = vim.api.nvim_create_augroup(
+                    "lsp-highlight",
+                    { clear = false }
+                )
+
+                vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+                    buffer = e.buf,
+                    group = highlight_augroup,
+                    callback = vim.lsp.buf.document_highlight,
+                })
+
+                vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+                    buffer = e.buf,
+                    group = highlight_augroup,
+                    callback = vim.lsp.buf.clear_references,
+                })
+
+                vim.api.nvim_create_autocmd("LspDetach", {
+                    group = vim.api.nvim_create_augroup(
+                        "lsp-detach",
+                        { clear = true }
+                    ),
+                    callback = function(e2)
+                        vim.lsp.buf.clear_references()
+                        vim.api.nvim_clear_autocmds({
+                            group = "lsp-highlight",
+                            buffer = e2.buf,
+                        })
+                    end,
+                })
+            end
+        end,
+    })
+end
+
+return {
+    "neovim/nvim-lspconfig",
+    dependencies = { "j-hui/fidget.nvim" },
+    config = lsp_setup,
 }

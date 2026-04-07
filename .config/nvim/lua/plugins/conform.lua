@@ -9,14 +9,12 @@ return {
                     "ruff_format",
                     "ruff_organize_imports",
                 },
-                typescript = {
-                    "prettier"
-                },
+                typescript = { "prettier" },
             },
         })
 
         vim.keymap.set("n", "<leader>f", function()
             require("conform").format({ lsp_format = "fallback" })
-        end)
-    end,
+        end, { desc = "Format" })
+    end
 }

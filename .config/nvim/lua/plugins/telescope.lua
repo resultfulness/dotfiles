@@ -1,15 +1,10 @@
 return {
     "nvim-telescope/telescope.nvim",
-    event = "VimEnter",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-ui-select.nvim",
-        {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
-            cond = vim.fn.executable("make") == 1,
-        },
     },
+    version = "*",
     config = function()
         require("telescope").setup({
             extensions = {
@@ -17,22 +12,37 @@ return {
             },
         })
 
-        pcall(require("telescope").load_extension, "fzf")
         pcall(require("telescope").load_extension, "ui-select")
 
-        local builtin = require("telescope.builtin")
+        vim.keymap.set(
+            "n",
+            "<leader>sh",
+            require("telescope.builtin").help_tags,
+            { desc = "search help" }
+        )
 
-        vim.keymap.set("n", "<leader>?", builtin.help_tags)
         vim.keymap.set("n", "<leader>sf", function()
-            builtin.find_files({ hidden = true })
-        end)
-        vim.keymap.set("n", "<leader>sw", builtin.grep_string)
-        vim.keymap.set("n", "<leader>sg", builtin.live_grep)
-        vim.keymap.set("n", "<leader>sr", builtin.resume)
-        vim.keymap.set("n", "<leader><leader>", builtin.buffers)
-        vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find)
+            require("telescope.builtin").find_files({ hidden = true })
+        end, { desc = "search files" })
+
+        vim.keymap.set(
+            "n",
+            "<leader>sw",
+            require("telescope.builtin").grep_string,
+            { desc = "grep string" }
+        )
+
+        vim.keymap.set(
+            "n",
+            "<leader>sg",
+            require("telescope.builtin").live_grep,
+            { desc = "grep search" }
+        )
+
         vim.keymap.set("n", "<leader>sn", function()
-            builtin.find_files({ cwd = vim.fn.stdpath("config") })
-        end)
+            require("telescope.builtin").find_files({
+                cwd = vim.fn.stdpath("config"),
+            })
+        end, { desc = "search configuration" })
     end,
 }
