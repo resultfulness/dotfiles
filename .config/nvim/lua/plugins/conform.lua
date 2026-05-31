@@ -15,6 +15,6 @@ return {
 
         vim.keymap.set("n", "<leader>f", function()
             require("conform").format({ lsp_format = "fallback" })
-        end, { desc = "Format" })
+        end, { desc = "format" })
     end
 }

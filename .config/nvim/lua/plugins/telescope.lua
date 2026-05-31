@@ -7,6 +7,18 @@ return {
     version = "*",
     config = function()
         require("telescope").setup({
+            defaults = require("telescope.themes").get_ivy({
+                layout_config = { height = 0.5 },
+                selection_caret = "",
+                entry_prefix = "",
+                results_title = false,
+                border = false,
+                mappings = {
+                    i = {
+                        ["<a-p>"] = require("telescope.actions.layout").toggle_preview,
+                    },
+                },
+            }),
             extensions = {
                 ["ui-select"] = { require("telescope.themes").get_dropdown() },
             },
@@ -14,35 +26,23 @@ return {
 
         pcall(require("telescope").load_extension, "ui-select")
 
-        vim.keymap.set(
-            "n",
-            "<leader>sh",
-            require("telescope.builtin").help_tags,
-            { desc = "search help" }
-        )
+        local function telescope_keymap(suffix, func, desc)
+            vim.keymap.set("n", "<leader>s" .. suffix, func, { desc = desc })
+        end
 
-        vim.keymap.set("n", "<leader>sf", function()
-            require("telescope.builtin").find_files({ hidden = true })
-        end, { desc = "search files" })
+        local builtin = require("telescope.builtin")
 
-        vim.keymap.set(
-            "n",
-            "<leader>sw",
-            require("telescope.builtin").grep_string,
-            { desc = "grep string" }
-        )
+        telescope_keymap("h", builtin.help_tags, "search help")
+        telescope_keymap("f", builtin.find_files, "search files")
+        telescope_keymap("w", builtin.grep_string, "grep string")
+        telescope_keymap("g", builtin.live_grep, "grep search")
+        telescope_keymap("b", builtin.buffers, "search buffers")
 
-        vim.keymap.set(
-            "n",
-            "<leader>sg",
-            require("telescope.builtin").live_grep,
-            { desc = "grep search" }
-        )
-
-        vim.keymap.set("n", "<leader>sn", function()
-            require("telescope.builtin").find_files({
+        telescope_keymap("n", function()
+            builtin.find_files({
                 cwd = vim.fn.stdpath("config"),
+                prompt_title = "search config",
             })
-        end, { desc = "search configuration" })
+        end, "search config")
     end,
 }

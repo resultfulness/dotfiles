@@ -9,10 +9,11 @@ return {
             default_command = {
                 c = "cc -o %:r % && ./%:r",
                 rust = "cargo run",
+                python = "uv run main.py",
             },
         }
 
-        vim.keymap.set("n", "<leader>cc", "<cmd>Compile<cr>")
+        vim.keymap.set("n", "<leader>cc", "<cmd>Compile5<cr>")
         vim.keymap.set("n", "<leader>cC", "<cmd>Recompile<cr>")
     end
 }

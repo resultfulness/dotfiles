@@ -5,7 +5,7 @@ return {
             delay = 1000,
             expand = 1,
             win = {
-                padding = { 0, 0, 2, 0 },
+                padding = { 2, 0 },
                 height = { min = 0 },
             },
             layout = {
