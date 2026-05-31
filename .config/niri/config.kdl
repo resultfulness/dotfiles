@@ -37,10 +37,17 @@ layout {
 
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
+spawn-at-startup "sunsetr"
 
 hotkey-overlay { skip-at-startup; }
 prefer-no-csd
 screenshot-path "~/pictures/screenshots/screenshot--%Y-%m-%d_%H-%M-%S.png"
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 32
+    hide-when-typing
+}
 
 animations { }
 
