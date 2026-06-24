@@ -1,20 +1,9 @@
 IgnorePath '/*'
 
-AddPackage linux
-AddPackage linux-firmware
-AddPackage base
-AddPackage base-devel
-AddPackage amd-ucode
-
-AddPackage git
-AddPackage stow
-
-AddPackage openssh
-AddPackage sshfs
-AddPackage networkmanager
-AddPackage wireguard-tools
-AddPackage openconnect
-AddPackage mullvad-vpn
+base
+networking
+tex
+qemu
 
 AddPackage bash-completion
 AddPackage man-db
@@ -35,19 +24,21 @@ AddPackage fd
 AddPackage fzf
 AddPackage ripgrep
 
+AddPackage yazi
+AddPackage wiremix
+AddPackage htop
+
 AddPackage neovim
 AddPackage tree-sitter
 AddPackage tree-sitter-cli
-AddPackage yazi
 AddPackage tmux
-AddPackage htop
-AddPackage wiremix
 
 AddPackage lua-language-server
 AddPackage rust-analyzer
 AddPackage svelte-language-server
 AddPackage typescript-language-server
 AddPackage pyright
+AddPackage ruff
 AddPackage vscode-css-languageserver
 AddPackage vscode-html-languageserver
 
@@ -62,29 +53,6 @@ AddPackage watchexec
 AddPackage nix
 AddPackage docker
 AddPackage docker-compose
-
-AddPackage texlive-basic
-AddPackage texlive-bibtexextra
-AddPackage texlive-binextra
-AddPackage texlive-context
-AddPackage texlive-fontsextra
-AddPackage texlive-fontsrecommended
-AddPackage texlive-fontutils
-AddPackage texlive-formatsextra
-AddPackage texlive-games
-AddPackage texlive-humanities
-AddPackage texlive-latex
-AddPackage texlive-latexextra
-AddPackage texlive-latexrecommended
-AddPackage texlive-luatex
-AddPackage texlive-mathscience
-AddPackage texlive-metapost
-AddPackage texlive-music
-AddPackage texlive-pictures
-AddPackage texlive-plaingeneric
-AddPackage texlive-pstricks
-AddPackage texlive-publishers
-AddPackage texlive-xetex
 
 AddPackage niri
 AddPackage xwayland-satellite
@@ -122,6 +90,7 @@ AddPackage signal-desktop
 AddPackage spotify-launcher
 AddPackage gimp
 AddPackage tenacity
+AddPackage godot
 
 AddPackage nvidia-open
 AddPackage nvidia-utils
