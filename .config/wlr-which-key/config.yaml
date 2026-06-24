@@ -29,6 +29,9 @@ menu:
       - key: "n"
         desc: ddcutil setvcp 10 0
         cmd: ddcutil setvcp 10 0
+      - key: "e"
+        desc: ddcutil setvcp 10 44
+        cmd: ddcutil setvcp 10 44
   - key: "p"
     desc: power
     submenu:
