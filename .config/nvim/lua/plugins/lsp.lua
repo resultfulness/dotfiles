@@ -22,6 +22,7 @@ local function lsp_setup()
         pyright = {},
         clangd = {},
         jdtls = {},
+        gdscript = {},
     }
 
     for server_name, server_settings in pairs(lsp_servers) do

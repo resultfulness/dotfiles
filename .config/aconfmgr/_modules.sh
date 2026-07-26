@@ -92,6 +92,8 @@ function gui() {
     AddPackage spotify-launcher
     AddPackage gimp
     AddPackage tenacity
+    AddPackage zathura
+    AddPackage zathura-pdf-poppler
     AddPackage --foreign zen-browser-bin
 }
 

@@ -6,7 +6,6 @@ return {
         vim.g.baleia = require("baleia").setup({})
 
         vim.g.compile_mode = {
-            input_word_completion = true,
             bang_expansion = true,
             baleia_setup = true,
             default_command = {
@@ -15,7 +14,8 @@ return {
                 python = "uv run main.py",
                 plaintex = "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f %",
                 tex = "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f %",
-                odin = "odin run ."
+                odin = "odin run .",
+                gdscript = "godot scenes/",
             },
         }
 

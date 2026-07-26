@@ -38,6 +38,7 @@ layout {
 spawn-at-startup "awww-daemon"
 spawn-at-startup "waybar"
 spawn-at-startup "sunsetr"
+spawn-at-startup "sunshine"
 
 hotkey-overlay { skip-at-startup; }
 prefer-no-csd
