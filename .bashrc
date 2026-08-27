@@ -9,16 +9,15 @@ alias ls='ls --color=auto'
 alias ecfg='cd ~/.config/dotfiles && nvim .'
 alias ta='tmux attach'
 alias n='nvim .'
-alias venv='source .venv/bin/activate'
+alias venv='source .venv/bin/activate || source venv/bin/activate'
 
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
+    command yazi "$@" --cwd-file="$tmp"
     IFS= read -r -d '' cwd < "$tmp"
-    [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-    rm -f -- "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    command rm -f -- "$tmp"
 }
-
 eval "$(starship init bash)"
 
 export SCRIPT_PATH="$HOME/.local/bin"

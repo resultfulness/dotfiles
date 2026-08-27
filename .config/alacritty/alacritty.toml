@@ -1,29 +1,54 @@
+[window]
+opacity = 0.90
+
 [font]
 size = 16.0
 
 [font.normal]
 family = "ComicShannsMono Nerd Font"
 
-[colors.normal]
-black = "#282828"
-red = "#ca1444"
-green = "#789aba"
-yellow = "#b3879f"
-blue = "#94469b"
-magenta = "#cb6fa1"
-cyan = "#fb6e93"
-white = "#cf98c1"
-
-[colors.bright]
-black = "#98218e"
-red = "#cb515d"
-green = "#5a87b1"
-yellow = "#9c61ab"
-blue = "#9a77b1"
-magenta = "#f2a297"
-cyan = "#f4436f"
-white = "#ebdbb2"
+# [colors.normal]
+# black = "#282828"
+# red = "#ca1444"
+# green = "#789aba"
+# yellow = "#b3879f"
+# blue = "#94469b"
+# magenta = "#cb6fa1"
+# cyan = "#fb6e93"
+# white = "#cf98c1"
+#
+# [colors.bright]
+# black = "#98218e"
+# red = "#cb515d"
+# green = "#5a87b1"
+# yellow = "#9c61ab"
+# blue = "#9a77b1"
+# magenta = "#f2a297"
+# cyan = "#f4436f"
+# white = "#ebdbb2"
+#
+# [colors.primary]
+# background = "#1d1c20"
+# foreground = "#ead8e3"
 
 [colors.primary]
-background = "#fcf8ec"
-foreground = "#210f1a"
+background = "#333333"
+foreground = "#C2C2C2"
+[colors.normal]
+black = "#333333"
+red = "#CCCCCC"
+green = "#686868"
+yellow = "#7C7C7C"
+blue = "#868686"
+magenta = "#5E5E5E"
+cyan = "#B8B8B8"
+white = "#A4A4A4"
+[colors.bright]
+black = "#A4A4A4"
+red = "#CCCCCC"
+green = "#686868"
+yellow = "#7C7C7C"
+blue = "#868686"
+magenta = "#5E5E5E"
+cyan = "#B8B8B8"
+white = "#868686"

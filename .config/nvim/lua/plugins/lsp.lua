@@ -23,6 +23,10 @@ local function lsp_setup()
         clangd = {},
         jdtls = {},
         gdscript = {},
+        qmlls = {
+            cmd = { '/usr/lib/qt6/bin/qmlls' },
+        },
+        denols = {},
     }
 
     for server_name, server_settings in pairs(lsp_servers) do

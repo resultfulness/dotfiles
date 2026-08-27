@@ -69,6 +69,7 @@ function dev() {
     AddPackage pnpm
     AddPackage rustup
     AddPackage python-uv
+    AddPackage deno
 
     AddPackage watchexec
     AddPackage nix
@@ -95,6 +96,7 @@ function gui() {
     AddPackage zathura
     AddPackage zathura-pdf-poppler
     AddPackage --foreign zen-browser-bin
+    AddPackage anki
 }
 
 function desktop() {
@@ -115,6 +117,15 @@ function desktop() {
     AddPackage noto-fonts-emoji
     AddPackage swaylock
     AddPackage swayidle
+
+    AddPackage hyprland
+    AddPackage hyprlock
+    AddPackage hyprpicker
+    AddPackage quickshell
+    AddPackage grim
+    AddPackage slurp
+    AddPackage satty
+    AddPackage xdg-desktop-portal-hyprland
 
     AddPackage qt5-wayland
     AddPackage qt6-wayland

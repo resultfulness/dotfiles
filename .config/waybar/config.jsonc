@@ -4,7 +4,7 @@
   "margin": "0 0 0 0",
   "spacing": 16,
   "modules-left": [
-    "niri/workspaces",
+    "hyprland/workspaces",
     "mpris"
   ],
   "modules-center": [
@@ -23,9 +23,7 @@
   },
   "hyprland/workspaces": {
     "on-click": "activate",
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
-    }
+    "format": "{id} {name}",
   },
   "tray": {
     "icon-size": 18,

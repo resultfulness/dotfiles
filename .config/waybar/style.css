@@ -6,7 +6,6 @@ window#waybar {
   background-color: @bg;
   font-family: NotoSansM Nerd Font;
   font-size: 16px;
-  border-radius: 12px;
 }
 
 .modules-left,

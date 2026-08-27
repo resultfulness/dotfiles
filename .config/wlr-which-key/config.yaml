@@ -1,22 +1,22 @@
 # Theming
 font: NotoSansM Nerd Font 14
-background: "#fcf8ec"
-color: "#210f1a"
-border: "#d968ac"
+background: "#333333"
+color: "#c2c2c2"
+border: "#4a4a4a"
 separator: "  ➜  "
 border_width: 4
-corner_r: 10
+corner_r: 0
 padding: 16
 
-anchor: center
+anchor: top-left
 margin_right: 0
 margin_bottom: 12
-margin_left: 0
+margin_left: 900
 margin_top: 0
 
 # namespace: "launcher"
 
-inhibit_compositor_keyboard_shortcuts: true
+inhibit_compositor_keyboard_shortcuts: false
 auto_kbd_layout: true
 
 menu:
@@ -94,11 +94,20 @@ menu:
         desc: gimp
         cmd: gimp
       - key: "m"
-        desc: music
-        cmd: spotify-launcher
+        desc: cmus
+        cmd: alacritty -e cmus
       - key: "v"
-        desc: volume
+        desc: wiremix
         cmd: alacritty -e wiremix -v output -s extracompat
       - key: "space"
         desc: fuzzel
         cmd: fuzzel
+      - key: "a"
+        desc: anki
+        cmd: anki
+      - key: "c"
+        desc: hyprpicker --autocopy
+        cmd: hyprpicker --autocopy
+      - key: "z"
+        desc: zathura
+        cmd: zathura

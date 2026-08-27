@@ -8,6 +8,7 @@ return {
             completion = {
                 documentation = { auto_show = true, auto_show_delay_ms = 0 },
                 menu = {
+                    auto_show = false,
                     draw = {
                         columns = {
                             { "label", "label_description", gap = 1 },
@@ -20,5 +21,5 @@ return {
             fuzzy = { implementation = "prefer_rust_with_warning" },
             cmdline = { enabled = false },
         })
-    end
+    end,
 }
