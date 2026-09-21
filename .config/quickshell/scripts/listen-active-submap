@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo '{ "submap": "reset" }'
+
+FIELDS=("key" "description" "modmask")
+
+out_obj="{"
+for f in "${FIELDS[@]}"; do
+    out_obj="$out_obj$f: .$f, "
+done
+out_obj="$out_obj}"
+
+socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - |\
+    stdbuf -o0 awk -F '>>' '/^submap>>/{print $2}' |\
+    while read -r submap; do
+        if [ -n "$submap" ]; then
+            hyprctl binds -j |\
+                jq -c "
+                map(select(.submap == \"$submap\")) |   # select only binds in current submap
+                map(select(.key != \"escape\")) |       # dont show binds that reset submap
+                map(select(.key != \"backspace\")) |
+                map($out_obj) |                         # show only fields from FIELDS
+                {submap: \"$submap\", binds: .}         # attach submap name
+                    "
+        else
+            echo '{ "submap": "reset" }'
+        fi
+    done

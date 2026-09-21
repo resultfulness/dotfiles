@@ -3,7 +3,7 @@ shopt -s autocd
 
 HISTSIZE= HISTFILESIZE=
 
-alias grep='grep --color=auto'
+alias grep='rg'
 alias ls='ls --color=auto'
 
 alias ecfg='cd ~/.config/dotfiles && nvim .'

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+function get_active_layout() {
+    hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap'
+}
+
+get_active_layout
+
+socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - |\
+    stdbuf -o0 awk -F '>>' '/^activelayout>>/{print $2}' |\
+    while read -r layout; do
+        get_active_layout
+    done
