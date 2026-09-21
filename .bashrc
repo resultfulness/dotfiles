@@ -19,6 +19,7 @@ function y() {
     command rm -f -- "$tmp"
 }
 eval "$(starship init bash)"
+eval "$(direnv hook bash)"
 
 export SCRIPT_PATH="$HOME/.local/bin"
 case ":$PATH:" in

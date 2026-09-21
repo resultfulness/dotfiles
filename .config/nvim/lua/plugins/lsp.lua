@@ -23,9 +23,7 @@ local function lsp_setup()
         clangd = {},
         jdtls = {},
         gdscript = {},
-        qmlls = {
-            cmd = { '/usr/lib/qt6/bin/qmlls' },
-        },
+        qmlls = {},
         denols = {},
     }
 

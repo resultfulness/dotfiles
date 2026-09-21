@@ -4,13 +4,16 @@ local terminal = "alacritty"
 local fileManager = terminal .. " -e yazi"
 local menu = "fuzzel"
 
+local cursor_size = 24
+
 hl.on("hyprland.start", function()
     hl.exec_cmd(terminal)
     hl.exec_cmd("quickshell & awww-daemon & sunsetr & sunshine")
+    hl.exec_cmd("hyprctl setcursor Adwaita " .. cursor_size)
 end)
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XCURSOR_SIZE", cursor_size)
+hl.env("HYPRCURSOR_SIZE", cursor_size)
 
 hl.config({
     input = {
@@ -97,6 +100,7 @@ hl.bind(super("ALT + L"), hl.dsp.exec_cmd("hyprlock"))
 hl.bind(super("v"), hl.dsp.window.float({ action = "toggle" }))
 hl.bind(super(shift("v")), hl.dsp.window.cycle_next({ floating = true, tiled = true }))
 hl.bind(super("t"), hl.dsp.layout("togglesplit"))
+hl.bind(super("p"), hl.dsp.window.pseudo())
 hl.bind(super("f"), hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(super(shift("f")), hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 

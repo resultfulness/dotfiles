@@ -122,6 +122,7 @@ function desktop() {
     AddPackage hyprlock
     AddPackage hyprpicker
     AddPackage quickshell
+    AddPackage socat
     AddPackage grim
     AddPackage slurp
     AddPackage satty
