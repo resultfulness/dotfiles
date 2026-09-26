@@ -25,6 +25,7 @@ local function lsp_setup()
         gdscript = {},
         qmlls = {},
         denols = {},
+        gleam = {},
     }
 
     for server_name, server_settings in pairs(lsp_servers) do

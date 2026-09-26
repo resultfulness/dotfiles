@@ -16,6 +16,7 @@ return {
                 tex = "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f %",
                 odin = "odin run .",
                 gdscript = "godot scenes/",
+                gleam = "gleam run",
             },
         }
 
