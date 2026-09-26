@@ -17,13 +17,16 @@ Singleton {
     readonly property var output_hw_filter: n => n.isSink && !n.isStream && n.name !== "alsa_output.pci-0000_0d_00.4.iec958-stereo"
     readonly property list<PwNode> sinks: Pipewire.nodes.values.filter(output_hw_filter)
 
-    onSinkMutedChanged: () => console.log(JSON.stringify(sinks))
-
     readonly property list<int> sinkids: sinks.map(n => n.id)
 
     readonly property PwNode source: Pipewire.defaultAudioSource
     readonly property bool sourceMuted: source?.audio?.muted ?? false
     readonly property string sourceVolume: sink?.audio?.volume.toFixed(2) ?? "0.00"
+
+    signal audioChanged()
+
+    onSinkVolumeChanged: audioChanged()
+    onSinkMutedChanged: audioChanged()
 
     function volumeup() {
         if (sink?.ready && sink?.audio) {

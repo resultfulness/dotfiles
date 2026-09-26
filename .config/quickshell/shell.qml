@@ -19,9 +19,8 @@ ShellRoot {
                 screen: scope.modelData
             }
 
-            SnavWindow {
-                screen: scope.modelData
-            }
+            SnavWindow {}
+            OsdWindow {}
         }
     }
 }

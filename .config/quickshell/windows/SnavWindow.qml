@@ -8,8 +8,6 @@ PanelWindow {
     id: snav
     color: "transparent"
 
-    required property ShellScreen screen
-
     WlrLayershell.exclusionMode: ExclusionMode.Normal
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.namespace: "snav"
