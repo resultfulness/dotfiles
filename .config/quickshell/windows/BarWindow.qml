@@ -55,6 +55,7 @@ PanelWindow {
                 PlayerControl {}
                 Tray {}
                 Volume {}
+                BatteryLevel {}
             }
         }
     }
