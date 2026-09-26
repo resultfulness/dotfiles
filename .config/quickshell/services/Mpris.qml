@@ -24,7 +24,9 @@ Singleton {
 
         let out = `${playerName}: ${icon} ${player.trackArtist} - ${player.trackTitle}`;
 
-        return out.length > ellipsis ? out.slice(0, ellipsis - ellipsis_chars.length) + ellipsis_chars : out;
+        return out.length > ellipsis
+            ? out.slice(0, ellipsis - ellipsis_chars.length) + ellipsis_chars
+            : out;
     }
 
     function next_player() {

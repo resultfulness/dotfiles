@@ -36,10 +36,10 @@ WrapperMouseArea {
                     }
                 }
 
-                readonly property int spacing: 8
-                readonly property int margin: 8
-                readonly property int unfocusedWidth: workspace_id.width + margin * 2
-                readonly property int focusedWidth: workspace_id.width + workspace_label.width + spacing + margin * 2
+                readonly property int labelSpacing: 8
+                readonly property int labelMargin: 8
+                readonly property int unfocusedWidth: workspace_id.width + labelMargin * 2
+                readonly property int focusedWidth: workspace_id.width + workspace_label.width + labelSpacing + labelMargin * 2
 
                 Layout.preferredWidth: workspace.focused ? focusedWidth : unfocusedWidth
 
@@ -47,11 +47,11 @@ WrapperMouseArea {
                     color: box.workspace.focused ? Color.magenta : Color.muted
                     margin: 2
                     radius: 4
-                    leftMargin: box.margin
-                    rightMargin: box.margin
+                    leftMargin: box.labelMargin
+                    rightMargin: box.labelMargin
 
                     RowLayout {
-                        spacing: box.spacing
+                        spacing: box.labelSpacing
 
                         StyledText {
                             id: workspace_id

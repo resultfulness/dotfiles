@@ -8,6 +8,7 @@ Singleton {
     id: root
 
     readonly property UPowerDevice battery: UPower.displayDevice
+    readonly property string percentage: battery.percentage.toFixed(2)
     readonly property bool is_charging: battery.state === UPowerDeviceState.Charging
 
     function get_time_remaining() {
@@ -17,9 +18,6 @@ Singleton {
     }
 
     function seconds_to_hhmmss_display(seconds: int): string {
-        if (seconds < 60) {
-            return seconds;
-        }
         const date_str = new Date(seconds * 1000).toISOString();
         if (seconds < 3600) {
             return date_str.substring(14, 19);

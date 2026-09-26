@@ -23,7 +23,7 @@ Singleton {
     readonly property bool sourceMuted: source?.audio?.muted ?? false
     readonly property string sourceVolume: sink?.audio?.volume.toFixed(2) ?? "0.00"
 
-    signal audioChanged()
+    signal audioChanged
 
     onSinkVolumeChanged: audioChanged()
     onSinkMutedChanged: audioChanged()

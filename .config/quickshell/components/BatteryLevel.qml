@@ -1,8 +1,12 @@
+import Quickshell
 import qs.services
 
-StyledText {
-    text: "bat="
-        + Power.battery.percentage
-        + (Power.is_charging ? "+" : "")
-        + " " + `(${Power.get_time_remaining()})`
+LazyLoader {
+    active: Power.battery.ready
+    StyledText {
+        readonly property string charge_indicator: Power.is_charging ? "+" : ""
+        readonly property string time: Power.get_time_remaining()
+
+        text: "bat=" + Power.percentage + charge_indicator + " " + `(${time})`
+    }
 }
