@@ -90,7 +90,11 @@
     sunsetr
   ];
 
-  services.sunshine.enable = true;
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+  };
 
   services.syncthing = {
     enable = true;
