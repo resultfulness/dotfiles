@@ -32,7 +32,7 @@ hl.config({
         border_size = 4,
 
         col = {
-            active_border = { colors = { "rgb(d699b6)" } },
+            active_border = { colors = { "rgb(e69875)" } },
             inactive_border = "rgb(4a4a4a)",
         },
 
@@ -101,6 +101,14 @@ hl.bind(super("v"), hl.dsp.window.float({ action = "toggle" }))
 hl.bind(super(shift("v")), hl.dsp.window.cycle_next({ floating = true, tiled = true }))
 hl.bind(super("t"), hl.dsp.layout("togglesplit"))
 hl.bind(super("p"), hl.dsp.window.pseudo())
+hl.bind(super(shift("p")), function()
+    hl.dispatch(hl.dsp.window.pseudo())
+    hl.dispatch(hl.dsp.window.resize({
+        y = 9999,
+        x = 1280,
+    }))
+end)
+hl.bind(super("equal"), hl.dsp.layout("splitratio 1.0 exact"))
 hl.bind(super("f"), hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(super(shift("f")), hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
@@ -242,14 +250,27 @@ hl.define_submap("main", function()
     hl.bind("escape", hl.dsp.submap("reset"))
 end)
 
--- stylua: ignore
 hl.define_submap("resize", function()
     local resizeamt = 100
 
+    -- stylua: ignore
     hl.bind("l", hl.dsp.window.resize({ x = resizeamt, y = 0, relative = true }), { repeating = true, description = "right" })
+    -- stylua: ignore
     hl.bind("h", hl.dsp.window.resize({ x = -resizeamt, y = 0, relative = true }), { repeating = true, description = "left" })
+    -- stylua: ignore
     hl.bind("k", hl.dsp.window.resize({ x = 0, y = resizeamt, relative = true }), { repeating = true, description = "up" })
+    -- stylua: ignore
     hl.bind("j", hl.dsp.window.resize({ x = 0, y = -resizeamt, relative = true }), { repeating = true, description = "down" })
+
+    bind_exec(
+        "m",
+        [[
+        w="$(fuzzel --placeholder 'enter width...' --dmenu <<< '')";
+        hyprctl dispatch "hl.dsp.window.resize({y=9999,x=$w,relative=false})"
+        ]],
+        "manual (enter width)",
+        true
+    )
 
     exit_binds()
 end)

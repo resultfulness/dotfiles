@@ -44,7 +44,7 @@ WrapperMouseArea {
                 Layout.preferredWidth: workspace.focused ? focusedWidth : unfocusedWidth
 
                 ClippingWrapperRectangle {
-                    color: box.workspace.focused ? Color.magenta : Color.muted
+                    color: box.workspace.focused ? Color.orange : Color.muted
                     margin: 2
                     radius: 4
                     leftMargin: box.labelMargin

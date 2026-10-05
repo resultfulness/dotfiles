@@ -42,6 +42,10 @@ Item {
                 radius: 4
                 color: Color.background
 
+                border {
+                    color: Color.border
+                    width: 4
+                }
                 margin: 8
 
                 ColumnLayout {

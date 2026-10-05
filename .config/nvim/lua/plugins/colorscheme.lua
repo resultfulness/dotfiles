@@ -1,24 +1,17 @@
 return {
-    "anAcc22/sakura.nvim",
+    "e-ink-colorscheme/e-ink.nvim",
     dependencies = {
-        "rktjmp/lush.nvim",
         {
-            "jesseleite/noirbuddy.nvim",
-            dependencies = { "tjdevries/colorbuddy.nvim" },
+            "anAcc22/sakura.nvim",
+            dependencies = { "rktjmp/lush.nvim" },
         },
-        "e-ink-colorscheme/e-ink.nvim",
     },
     config = function()
         local colors = {
             sakura = function()
-                vim.opt.background = "dark"
                 vim.cmd.colorscheme("sakura")
             end,
-            noir = function()
-                require("noirbuddy").setup({ preset = "miami-nights" })
-            end,
             eink = function()
-                vim.opt.background = "dark"
                 vim.cmd.colorscheme("e-ink")
                 vim.api.nvim_set_hl(
                     0,
@@ -28,12 +21,22 @@ return {
             end,
         }
 
-        local fns = {}
-        for color, fn in pairs(colors) do
-            vim.api.nvim_create_user_command(color:upper(), fn, {})
-            table.insert(fns, fn)
-        end
+        colors.eink()
+        vim.opt.background = "dark"
 
-        fns[math.random(#colors)]()
+        vim.keymap.set("n", "<leader>td", function()
+            if vim.o.background == "dark" then
+                vim.opt.background = "light"
+            else
+                vim.opt.background = "dark"
+            end
+        end)
+        vim.keymap.set("n", "<leader>tc", function()
+            if vim.g.colors_name == "e-ink" then
+                colors.sakura()
+            else
+                colors.eink()
+            end
+        end)
     end,
 }
