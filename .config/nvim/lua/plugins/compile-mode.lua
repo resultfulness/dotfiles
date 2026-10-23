@@ -7,7 +7,7 @@ return {
 
         vim.g.compile_mode = {
             bang_expansion = true,
-            baleia_setup = true,
+            ansi_color = { kind = "render" },
             default_command = {
                 c = "cc -o %:r % && ./%:r",
                 rust = "cargo run",
@@ -22,5 +22,5 @@ return {
 
         vim.keymap.set("n", "<leader>cc", "<cmd>Compile5<cr>")
         vim.keymap.set("n", "<leader>cC", "<cmd>Recompile<cr>")
-    end
+    end,
 }
