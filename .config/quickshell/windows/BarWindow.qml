@@ -44,6 +44,7 @@ PanelWindow {
                 spacing: 16
                 Workspaces {}
                 KeyboardLayout {}
+                FocusTimer {}
             }
 
             Spacer {
