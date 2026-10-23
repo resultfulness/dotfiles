@@ -8,6 +8,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
+  services.resolved.enable = true;
   networking.firewall.enable = false;
 
   time.timeZone = "Europe/Warsaw";
@@ -81,6 +83,7 @@
     fuzzel
     quickshell
     socat
+    libnotify
     wl-clipboard
     hyprlock
     hyprpicker
