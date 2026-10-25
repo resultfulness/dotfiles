@@ -69,4 +69,10 @@ Singleton {
         state = Pomodoro.Productivity;
         t = productivity_time;
     }
+
+    function skip() {
+        if (timer.running) {
+            t = 0;
+        }
+    }
 }

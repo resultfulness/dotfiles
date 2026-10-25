@@ -4,13 +4,16 @@ import Quickshell.Widgets
 import qs.services
 
 WrapperMouseArea {
-    acceptedButtons: Qt.LeftButton | Qt.RightButton
+    acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
     onClicked: e => {
         if (e.button & Qt.LeftButton) {
             Pomodoro.toggle();
         }
         if (e.button & Qt.RightButton) {
             Pomodoro.reset();
+        }
+        if (e.button & Qt.MiddleButton) {
+            Pomodoro.skip();
         }
     }
     cursorShape: Qt.PointingHandCursor
