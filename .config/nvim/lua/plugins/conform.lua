@@ -10,6 +10,8 @@ return {
                     "ruff_organize_imports",
                 },
                 typescript = { "prettier" },
+                typescriptreact = { "prettier" },
+                css = { "prettier" },
                 nix = { "nixfmt" },
             },
         })

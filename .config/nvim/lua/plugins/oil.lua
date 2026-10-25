@@ -2,6 +2,7 @@ return {
     "stevearc/oil.nvim",
     config = function()
         require("oil").setup({
+            default_file_explorer = false,
             view_options = {
                 is_always_hidden = function(name, _)
                     return require("godot").is_godot_project
@@ -12,6 +13,6 @@ return {
                 end,
             },
         })
-        vim.keymap.set("n", "<leader>-", require("oil").open, { desc = "oil" })
+        -- vim.keymap.set("n", "<leader>-", require("oil").open, { desc = "oil" })
     end,
 }

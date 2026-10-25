@@ -1,27 +1,31 @@
 return {
     "e-ink-colorscheme/e-ink.nvim",
     dependencies = {
-        {
-            "anAcc22/sakura.nvim",
-            dependencies = { "rktjmp/lush.nvim" },
-        },
+        "chrsm/paramount-ng.nvim",
+        "rktjmp/lush.nvim",
     },
     config = function()
-        local colors = {
-            sakura = function()
-                vim.cmd.colorscheme("sakura")
-            end,
-            eink = function()
-                vim.cmd.colorscheme("e-ink")
-                vim.api.nvim_set_hl(
-                    0,
-                    "Normal",
-                    { fg = require("e-ink.palette").mono()[12], bg = "NONE" }
-                )
-            end,
-        }
+        vim.cmd.colorscheme("e-ink")
 
-        colors.eink()
+        local palette = require("e-ink.palette")
+
+        vim.api.nvim_set_hl(
+            0,
+            "Normal",
+            { fg = palette.mono()[12], bg = "NONE" }
+        )
+        local colored =
+            { "Constant", "Character", "Number", "Boolean", "Float", "String" }
+
+        local function colorit()
+            for _, hl in ipairs(colored) do
+                vim.api.nvim_set_hl(0, hl, {
+                    fg = palette.everforest().orange,
+                })
+            end
+        end
+        colorit()
+
         vim.opt.background = "dark"
 
         vim.keymap.set("n", "<leader>td", function()
@@ -30,13 +34,7 @@ return {
             else
                 vim.opt.background = "dark"
             end
-        end)
-        vim.keymap.set("n", "<leader>tc", function()
-            if vim.g.colors_name == "e-ink" then
-                colors.sakura()
-            else
-                colors.eink()
-            end
+            colorit()
         end)
     end,
 }
