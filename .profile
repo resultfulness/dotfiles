@@ -10,6 +10,12 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+export NPM_CONFIG_INIT_MODULE="$XDG_CONFIG_HOME"/npm/config/npm-init.js
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_TMP="$XDG_RUNTIME_DIR"/npm
+export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
+export PYTHON_HISTORY="$XDG_STATE_HOME"/python_history
+export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 
 export TERMINAL="alacritty"
 export BROWSER="zen-browser"
