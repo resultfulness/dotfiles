@@ -1,58 +1,55 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    config = function()
-        local parsers = {
-            "c",
-            "css",
-            "html",
-            "lua",
-            "python",
-            "rust",
-            "javascript",
-            "typescript",
-            "vimdoc",
-            "vim",
-        }
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
-        require("nvim-treesitter").install(parsers)
+local parsers = {
+    "c",
+    "css",
+    "html",
+    "lua",
+    "python",
+    "rust",
+    "javascript",
+    "typescript",
+    "vimdoc",
+    "vim",
+}
 
-        local function try_ts_attach(b, language)
-            if not vim.treesitter.language.add(language) then
-                return
-            end
-            vim.treesitter.start(b, language)
+require("nvim-treesitter").install(parsers)
 
-            vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-            vim.wo[0][0].foldmethod = "expr"
+local function try_ts_attach(b, language)
+    if not vim.treesitter.language.add(language) then
+        return
+    end
+    vim.treesitter.start(b, language)
 
-            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.wo[0][0].foldmethod = "expr"
+
+    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+end
+
+local available = require("nvim-treesitter").get_available()
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args)
+        local b, ft = args.buf, args.match
+        local language = vim.treesitter.language.get_lang(ft)
+
+        if not language then
+            return
         end
 
-        local available = require("nvim-treesitter").get_available()
+        local installed = require("nvim-treesitter").get_installed(parsers)
 
-        vim.api.nvim_create_autocmd("FileType", {
-            callback = function(args)
-                local b, ft = args.buf, args.match
-                local language = vim.treesitter.language.get_lang(ft)
+        local is_installed = vim.tbl_contains(installed, language)
+        local can_install = vim.tbl_contains(available, language)
 
-                if not language then
-                    return
-                end
+        if not is_installed and can_install then
+            require("nvim-treesitter").install(language):await(function()
+                try_ts_attach(b, language)
+            end)
+        else
+            try_ts_attach(b, language)
+        end
+    end,
+})
 
-                local installed = require("nvim-treesitter").get_installed(parsers)
-
-                local is_installed = vim.tbl_contains(installed, language)
-                local can_install = vim.tbl_contains(available, language)
-
-                if not is_installed and can_install then
-                    require("nvim-treesitter").install(language):await(function()
-                        try_ts_attach(b, language)
-                    end)
-                else
-                    try_ts_attach(b, language)
-                end
-            end,
-        })
-    end
-}

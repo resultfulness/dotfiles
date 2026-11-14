@@ -1,9 +1,5 @@
+require("plugins")
 require("opts")
-require("keymaps")
-require("yank-highlight")
-require("packages")
-
-require("godot").init()
-
-vim.cmd.packadd("nvim.undotree")
-vim.keymap.set("n", "<leader>u", vim.cmd.Undotree, {})
+require("autocmds")
+require("binds")
+require("godot").setup()

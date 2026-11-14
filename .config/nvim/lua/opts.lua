@@ -17,6 +17,7 @@ vim.o.guicursor = ""
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 vim.o.colorcolumn = "80"
+vim.o.cursorline = true
 vim.o.list = true
 vim.opt.listchars = { tab = "› ", trail = "•", nbsp = "␣", extends = ">" }
 vim.o.foldmethod = "marker"
@@ -36,6 +37,9 @@ vim.o.updatetime = 250
 vim.o.confirm = true
 vim.o.showmode = false
 
+vim.o.splitbelow = true
+vim.o.splitright = true
+
 vim.o.termguicolors = true
 vim.g.c_syntax_for_h = 1
 
@@ -45,23 +49,4 @@ vim.diagnostic.config({
     underline = { severity = { min = vim.diagnostic.severity.WARN } },
     virtual_text = { source = "if_many", spacing = 2 },
     jump = { float = true },
-})
-
-vim.o.cursorline = true
-
-local cursorline_group =
-    vim.api.nvim_create_augroup("CursorLineControl", { clear = true })
-
-vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
-    group = cursorline_group,
-    callback = function()
-        vim.opt_local.cursorline = true
-    end,
-})
-
-vim.api.nvim_create_autocmd({ "WinLeave" }, {
-    group = cursorline_group,
-    callback = function()
-        vim.opt_local.cursorline = false
-    end,
 })
