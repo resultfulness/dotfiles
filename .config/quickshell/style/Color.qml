@@ -12,6 +12,5 @@ Singleton {
     readonly property string uhoh: "#cccccc"
     readonly property string border: "#4a4a4a"
     readonly property string yellow: "#dbbc7f"
-    readonly property string magenta: "#d699b6"
-    readonly property string orange: "#E69875"
+    readonly property string purple: "#a790d5"
 }

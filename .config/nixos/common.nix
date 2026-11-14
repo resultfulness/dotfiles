@@ -27,7 +27,6 @@
   };
 
   programs.hyprland.enable = true;
-  programs.hyprland.package = pkgs.unstable.hyprland;
 
   environment.systemPackages = with pkgs; [
     git
@@ -94,12 +93,6 @@
     satty
     sunsetr
   ];
-
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-  };
 
   services.syncthing = {
     enable = true;

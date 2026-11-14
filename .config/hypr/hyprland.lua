@@ -32,7 +32,7 @@ hl.config({
         border_size = 4,
 
         col = {
-            active_border = { colors = { "rgb(e69875)" } },
+            active_border = { colors = { "rgb(a790d5)" } },
             inactive_border = "rgb(4a4a4a)",
         },
 
@@ -411,5 +411,11 @@ hl.window_rule({
 hl.window_rule({
     name = "float",
     match = { class = "float" },
+    float = true,
+})
+
+hl.window_rule({
+    name = "float-yad",
+    match = { class = "yad" },
     float = true,
 })
