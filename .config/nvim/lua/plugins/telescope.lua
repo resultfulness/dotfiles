@@ -85,6 +85,7 @@ return {
         telescope_keymap("w", builtin.grep_string, "grep string")
         telescope_keymap("g", builtin.live_grep, "grep search")
         telescope_keymap("b", builtin.buffers, "search buffers")
+        telescope_keymap("i", builtin.highlights, "search highlights")
 
         telescope_keymap("d", function()
             local full_path = vim.api.nvim_buf_get_name(0)

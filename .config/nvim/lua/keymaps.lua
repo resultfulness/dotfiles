@@ -16,3 +16,5 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = 'delete to "_' })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = 'yank to "+' })
 
 vim.keymap.set("n", "J", "mzJ`z")
+
+vim.keymap.set("n", "<leader>i", vim.cmd.Inspect)
