@@ -3,7 +3,7 @@ vim.pack.add({
     "https://github.com/j-hui/fidget.nvim",
 })
 
-require("fidget").setup()
+require("fidget").setup({})
 
 local servers = {
     lua_ls = {
@@ -31,6 +31,8 @@ local servers = {
     qmlls = {},
     denols = {},
     gleam = {},
+    nixd = {},
+    texlab = {},
 }
 
 for server_name, server_settings in pairs(servers) do

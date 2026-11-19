@@ -1,4 +1,5 @@
-local yankhighlight_group = vim.api.nvim_create_augroup("yank-highlight", { clear = true })
+local yankhighlight_group =
+    vim.api.nvim_create_augroup("yank-highlight", { clear = true })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = yankhighlight_group,
@@ -7,7 +8,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
-local cursorline_group = vim.api.nvim_create_augroup("cursorline-active-buf", { clear = true })
+local cursorline_group =
+    vim.api.nvim_create_augroup("cursorline-active-buf", { clear = true })
 
 vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
     group = cursorline_group,

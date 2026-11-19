@@ -1,7 +1,7 @@
 vim.pack.add({
     {
         src = "https://github.com/nvim-telescope/telescope.nvim",
-        version = vim.version.range("*")
+        version = vim.version.range("*"),
     },
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-telescope/telescope-ui-select.nvim",
@@ -9,19 +9,7 @@ vim.pack.add({
 })
 
 local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
 local fb_actions = require("telescope._extensions.file_browser.actions")
-
-local function switch_to_oil(prompt_bufnr)
-    local ok, oil = pcall(require, "oil")
-    if not ok then
-        return
-    end
-
-    local current_picker = action_state.get_current_picker(prompt_bufnr)
-    local path = current_picker.finder.path
-    oil.open(path)
-end
 
 require("telescope").setup({
     defaults = require("telescope.themes").get_ivy({
@@ -53,13 +41,13 @@ require("telescope").setup({
             -- display_stat = false,
             previewer = false,
             follow_symlinks = true,
+            prompt_path = true,
             mappings = {
                 ["i"] = {
                     ["<c-w>"] = function()
                         vim.cmd("norm vbd")
                     end,
                     ["<c-d>"] = fb_actions.goto_cwd,
-                    ["<a-o>"] = switch_to_oil,
                 },
                 ["n"] = {
                     ["-"] = fb_actions.goto_parent_dir,
@@ -74,3 +62,25 @@ require("telescope").setup({
 
 pcall(require("telescope").load_extension, "file_browser")
 pcall(require("telescope").load_extension, "ui-select")
+
+local builtin = require("telescope.builtin")
+local file_browser = require("telescope").extensions.file_browser.file_browser
+
+local function file_browser_in_cd()
+    local full_path = vim.api.nvim_buf_get_name(0)
+    local dir = vim.fn.fnamemodify(full_path, ":h:s?oil://??")
+    file_browser({ path = dir })
+end
+
+local function search_config()
+    builtin.find_files({
+        cwd = vim.fn.stdpath("config"),
+        prompt_title = "search config",
+    })
+end
+
+return {
+    builtin = builtin,
+    file_browser_in_cd = file_browser_in_cd,
+    search_config = search_config,
+}

@@ -11,6 +11,11 @@ require("conform").setup({
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         css = { "prettier" },
-        nix = { "nixfmt" },
+        nix = { "alejandra" },
+        _ = { lsp_format = "fallback" },
     },
 })
+
+return {
+    format = require("conform").format,
+}

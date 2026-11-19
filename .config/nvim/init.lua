@@ -1,5 +1,7 @@
-require("plugins")
 require("opts")
 require("autocmds")
-require("binds")
+
+local plugins = require("plugins")
+require("binds").setup({ plugins = plugins })
+
 require("godot").setup()
