@@ -51,6 +51,7 @@
   ];
 
   programs.steam.enable = true;
+  programs.steam.extraCompatPackages = [ pkgs.proton-ge-bin ];
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];

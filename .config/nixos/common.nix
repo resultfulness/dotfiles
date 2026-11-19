@@ -60,6 +60,8 @@
     tree-sitter
     gcc
     direnv
+    unstable.alejandra
+    nixd
 
     file-roller
     keepassxc
@@ -92,6 +94,8 @@
     slurp
     satty
     sunsetr
+
+    strawberry
   ];
 
   services.syncthing = {
